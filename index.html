@@ -7,88 +7,642 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Inter', sans-serif; background: #FFFFFF; color: #1C1C1E; line-height: 1.4; overflow-x: hidden; }
-        html { scroll-behavior: smooth; }
-        .app-container { max-width: 1280px; margin: 0 auto; padding: 1rem 1rem 2rem; }
-        .top-bar { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem; background: rgba(255,255,255,0.98); position: sticky; top: 0; z-index: 100; border-radius: 60px; padding: 0.6rem 1.2rem; margin-bottom: 0.75rem; box-shadow: 0 4px 20px rgba(0,0,0,0.04); backdrop-filter: blur(8px); }
-        .logo { font-size: 1.6rem; font-weight: 800; background: linear-gradient(135deg, #D45A1E, #F0983A); -webkit-background-clip: text; background-clip: text; color: transparent; }
-        .nav-items { display: flex; gap: 0.9rem; align-items: center; flex-wrap: wrap; }
-        .nav-items a { text-decoration: none; color: #2C2C2E; font-weight: 500; font-size: 0.8rem; cursor: pointer; }
-        .btn-order-nav { background: linear-gradient(135deg, #25D366, #20B859); border: none; padding: 0.4rem 1rem; border-radius: 40px; font-weight: 600; font-size: 0.75rem; color: white; cursor: pointer; display: flex; align-items: center; gap: 5px; }
-        .hero-section { text-align: center; padding: 1rem 0 0.5rem; }
-        .hero-badge { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 2px; background: linear-gradient(135deg, #D45A1E20, #F0983A20); display: inline-block; padding: 0.2rem 0.8rem; border-radius: 40px; color: #D45A1E; font-weight: 700; margin-bottom: 0.8rem; }
-        .hero-section h1 { font-size: 2rem; font-weight: 800; letter-spacing: -0.02em; line-height: 1.2; max-width: 800px; margin: 0 auto 0.6rem; background: linear-gradient(135deg, #1C1C1E, #4A3B2C); -webkit-background-clip: text; background-clip: text; color: transparent; padding: 0 0.5rem; }
-        .hero-desc { font-size: 0.9rem; color: #5E5E6A; max-width: 620px; margin: 0 auto 1.2rem; line-height: 1.45; padding: 0 0.8rem; }
-        .stats-row { display: flex; justify-content: center; gap: 0.8rem; margin: 0.8rem 0 1.2rem; flex-wrap: wrap; }
-        .stat-item { text-align: center; background: rgba(255,245,235,0.6); padding: 0.3rem 0.9rem; border-radius: 50px; }
-        .stat-number { font-size: 1.3rem; font-weight: 800; background: linear-gradient(135deg, #D45A1E, #F0983A); -webkit-background-clip: text; background-clip: text; color: transparent; }
-        .stat-label { font-size: 0.65rem; color: #6C6C74; font-weight: 500; }
-        .action-buttons { display: flex; justify-content: center; gap: 0.8rem; flex-wrap: wrap; margin: 0.5rem 0 1rem; }
-        .btn-primary-orange { background: linear-gradient(135deg, #D45A1E, #F0983A); border: none; padding: 0.7rem 1.3rem; border-radius: 48px; font-weight: 700; font-size: 0.85rem; color: white; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; }
-        .btn-outline-dark { background: transparent; border: 1.5px solid #E0E0E6; padding: 0.7rem 1.3rem; border-radius: 48px; font-weight: 600; font-size: 0.85rem; color: #2C2C2E; cursor: pointer; }
-        .section-title { font-size: 1.8rem; font-weight: 700; text-align: center; margin: 2rem 0 0.3rem; background: linear-gradient(135deg, #1C1C1E, #5A4A3A); -webkit-background-clip: text; background-clip: text; color: transparent; }
-        .section-subhead { text-align: center; color: #6C6C74; margin-bottom: 1.2rem; font-size: 0.85rem; padding: 0 1rem; }
-        .menu-tab-header { display: flex; justify-content: center; gap: 0.5rem; flex-wrap: wrap; margin: 1.2rem 0 1.5rem; background: #F9F9FC; padding: 0.4rem; border-radius: 60px; width: 100%; }
-        .tab-btn { background: transparent; border: none; padding: 0.45rem 1rem; font-size: 0.8rem; font-weight: 600; color: #5E5E6A; cursor: pointer; border-radius: 40px; display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; }
-        .tab-btn.active { background: linear-gradient(135deg, #D45A1E, #F0983A); color: white; }
-        .menu-grid { display: grid; grid-template-columns: 1fr; gap: 1rem; margin: 0.5rem 0 1.5rem; }
-        .menu-card { background: #FFFFFF; border-radius: 24px; padding: 1rem; text-align: center; border: 1px solid rgba(224,122,44,0.08); box-shadow: 0 4px 12px rgba(0,0,0,0.02); transition: transform 0.2s; }
-        .menu-card:hover { transform: translateY(-4px); }
-        .menu-image { width: 100%; height: 180px; object-fit: cover; border-radius: 20px; margin-bottom: 0.8rem; background: #FDF5E6; }
-        .menu-title { font-size: 1.25rem; font-weight: 700; margin-bottom: 0.4rem; }
-        .menu-desc { font-size: 0.8rem; color: #5E5E6A; margin-bottom: 0.8rem; line-height: 1.4; }
-        .menu-price { font-weight: 800; font-size: 1.3rem; background: linear-gradient(135deg, #D45A1E, #F0983A); -webkit-background-clip: text; background-clip: text; color: transparent; margin-bottom: 0.8rem; }
-        .wa-order-btn { background: linear-gradient(135deg, #25D366, #1da15a); width: 100%; border: none; padding: 0.65rem; border-radius: 40px; font-weight: 600; color: white; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 0.85rem; transition: opacity 0.2s; }
-        .wa-order-btn:hover { opacity: 0.9; }
-        .chefs-grid { display: grid; grid-template-columns: 1fr; gap: 1rem; margin: 1rem 0; }
-        .chef-profile-card { background: #FFFFFF; border-radius: 28px; padding: 1rem; text-align: center; border: 1px solid #F5EAE2; transition: transform 0.2s; }
-        .chef-profile-card:hover { transform: translateY(-4px); }
-        .chef-image { width: 120px; height: 120px; object-fit: cover; border-radius: 50%; margin: 0 auto 0.8rem; display: block; background: #FFE6DB; }
-        .chef-name { font-size: 1.2rem; font-weight: 700; margin-bottom: 0.2rem; }
-        .chef-specialty { font-size: 0.7rem; font-weight: 600; color: #D45A1E; margin-bottom: 0.6rem; }
-        .chef-bio { font-size: 0.8rem; color: #5E5E6A; margin-bottom: 1rem; line-height: 1.4; }
-        .hire-chef-btn { background: transparent; border: 1.5px solid #D45A1E; padding: 0.6rem; border-radius: 40px; width: 100%; font-weight: 600; color: #D45A1E; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 6px; font-size: 0.85rem; transition: all 0.2s; }
-        .hire-chef-btn:hover { background: linear-gradient(135deg, #D45A1E, #F0983A); color: white; border-color: transparent; }
-        .testimonials-section { background: linear-gradient(145deg, #FEFAF7, #FCF6F0); border-radius: 32px; padding: 1.5rem 1rem; margin: 1.5rem 0; }
-        .testimonials-grid { display: flex; flex-direction: column; gap: 1rem; margin-top: 1.2rem; }
-        .testimonial-card { background: rgba(255,255,255,0.9); border-radius: 24px; padding: 1.2rem; border: 1px solid rgba(224,122,44,0.1); }
-        .stars { color: #F5A623; margin-bottom: 0.6rem; font-size: 0.85rem; }
-        .testimonial-text { font-weight: 500; color: #2C2C2E; margin-bottom: 0.6rem; line-height: 1.4; font-size: 0.85rem; }
-        .customer-name { font-weight: 600; font-size: 0.75rem; color: #D45A1E; }
-        .process-section { margin: 1rem 0; }
-        .process-grid { display: flex; flex-direction: column; gap: 1rem; margin: 1.2rem 0; }
-        .process-card { background: #FFFFFF; border-radius: 28px; padding: 1.3rem; text-align: center; border: 1px solid #F0E3DA; }
-        .process-icon { font-size: 2rem; background: linear-gradient(135deg, #D45A1E20, #F0983A20); width: 55px; height: 55px; display: flex; align-items: center; justify-content: center; border-radius: 60px; margin: 0 auto 0.8rem; color: #D45A1E; }
-        .process-card h3 { font-size: 1.2rem; margin-bottom: 0.6rem; }
-        .process-card p { font-size: 0.8rem; color: #5E5E6A; line-height: 1.4; }
-        .wa-demo { background: #F8F9FC; border-radius: 16px; padding: 0.6rem; margin-top: 0.8rem; font-size: 0.7rem; font-family: monospace; color: #2c2c2e; border-left: 3px solid #D45A1E; text-align: left; }
-        footer { text-align: center; margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid #F0E3DA; font-size: 0.7rem; color: #8E8E98; }
-        .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); backdrop-filter: blur(8px); z-index: 1000; display: flex; align-items: center; justify-content: center; opacity: 0; visibility: hidden; transition: all 0.3s ease; }
-        .modal-overlay.active { opacity: 1; visibility: visible; }
-        .modal-container { background: white; width: 90%; max-width: 500px; max-height: 85vh; border-radius: 32px; overflow-y: auto; transform: scale(0.95); transition: transform 0.3s ease; }
-        .modal-overlay.active .modal-container { transform: scale(1); }
-        .modal-header { padding: 1.2rem 1.5rem; border-bottom: 1px solid #F0E3DA; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; background: white; }
-        .modal-header h2 { font-size: 1.3rem; font-weight: 700; background: linear-gradient(135deg, #D45A1E, #F0983A); -webkit-background-clip: text; background-clip: text; color: transparent; }
-        .modal-close { background: none; border: none; font-size: 1.5rem; cursor: pointer; color: #8E8E98; width: 32px; height: 32px; border-radius: 50%; }
-        .modal-body { padding: 1.5rem; }
-        .form-group { margin-bottom: 1.2rem; }
-        .form-group label { display: block; font-size: 0.8rem; font-weight: 600; margin-bottom: 0.4rem; color: #2C2C2E; }
-        .form-group input, .form-group textarea, .form-group select { width: 100%; padding: 0.75rem; border: 1.5px solid #E8E8ED; border-radius: 16px; font-family: 'Inter', sans-serif; font-size: 0.85rem; }
-        .form-group input:focus, .form-group textarea:focus, .form-group select:focus { outline: none; border-color: #D45A1E; }
-        .modal-submit-btn { width: 100%; padding: 0.85rem; background: linear-gradient(135deg, #25D366, #1da15a); border: none; border-radius: 48px; font-weight: 700; font-size: 0.9rem; color: white; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 0.5rem; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #FFFFFF;
+            color: #1C1C1E;
+            line-height: 1.4;
+            overflow-x: hidden;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .app-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 1rem 1rem 2rem;
+        }
+
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            background: rgba(255, 255, 255, 0.98);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-radius: 60px;
+            padding: 0.6rem 1.2rem;
+            margin-bottom: 0.75rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+            backdrop-filter: blur(8px);
+        }
+
+        .logo {
+            font-size: 1.6rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #D45A1E, #F0983A);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .nav-items {
+            display: flex;
+            gap: 0.9rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .nav-items a {
+            text-decoration: none;
+            color: #2C2C2E;
+            font-weight: 500;
+            font-size: 0.8rem;
+            cursor: pointer;
+        }
+
+        .btn-order-nav {
+            background: linear-gradient(135deg, #25D366, #20B859);
+            border: none;
+            padding: 0.4rem 1rem;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 0.75rem;
+            color: white;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .hero-section {
+            text-align: center;
+            padding: 1rem 0 0.5rem;
+        }
+
+        .hero-badge {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            background: linear-gradient(135deg, #D45A1E20, #F0983A20);
+            display: inline-block;
+            padding: 0.2rem 0.8rem;
+            border-radius: 40px;
+            color: #D45A1E;
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+        }
+
+        .hero-section h1 {
+            font-size: 2rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+            max-width: 800px;
+            margin: 0 auto 0.6rem;
+            background: linear-gradient(135deg, #1C1C1E, #4A3B2C);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            padding: 0 0.5rem;
+        }
+
+        .hero-desc {
+            font-size: 0.9rem;
+            color: #5E5E6A;
+            max-width: 620px;
+            margin: 0 auto 1.2rem;
+            line-height: 1.45;
+            padding: 0 0.8rem;
+        }
+
+        .stats-row {
+            display: flex;
+            justify-content: center;
+            gap: 0.8rem;
+            margin: 0.8rem 0 1.2rem;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            text-align: center;
+            background: rgba(255, 245, 235, 0.6);
+            padding: 0.3rem 0.9rem;
+            border-radius: 50px;
+        }
+
+        .stat-number {
+            font-size: 1.3rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #D45A1E, #F0983A);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .stat-label {
+            font-size: 0.65rem;
+            color: #6C6C74;
+            font-weight: 500;
+        }
+
+        .action-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 0.8rem;
+            flex-wrap: wrap;
+            margin: 0.5rem 0 1rem;
+        }
+
+        .btn-primary-orange {
+            background: linear-gradient(135deg, #D45A1E, #F0983A);
+            border: none;
+            padding: 0.7rem 1.3rem;
+            border-radius: 48px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            color: white;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-outline-dark {
+            background: transparent;
+            border: 1.5px solid #E0E0E6;
+            padding: 0.7rem 1.3rem;
+            border-radius: 48px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: #2C2C2E;
+            cursor: pointer;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            text-align: center;
+            margin: 2rem 0 0.3rem;
+            background: linear-gradient(135deg, #1C1C1E, #5A4A3A);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .section-subhead {
+            text-align: center;
+            color: #6C6C74;
+            margin-bottom: 1.2rem;
+            font-size: 0.85rem;
+            padding: 0 1rem;
+        }
+
+        .menu-tab-header {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin: 1.2rem 0 1.5rem;
+            background: #F9F9FC;
+            padding: 0.4rem;
+            border-radius: 60px;
+            width: 100%;
+        }
+
+        .tab-btn {
+            background: transparent;
+            border: none;
+            padding: 0.45rem 1rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #5E5E6A;
+            cursor: pointer;
+            border-radius: 40px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            white-space: nowrap;
+        }
+
+        .tab-btn.active {
+            background: linear-gradient(135deg, #D45A1E, #F0983A);
+            color: white;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+            margin: 0.5rem 0 1.5rem;
+        }
+
+        .menu-card {
+            background: #FFFFFF;
+            border-radius: 24px;
+            padding: 1rem;
+            text-align: center;
+            border: 1px solid rgba(224, 122, 44, 0.08);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+            transition: transform 0.2s;
+        }
+
+        .menu-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .menu-image {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 20px;
+            margin-bottom: 0.8rem;
+            background: #FDF5E6;
+        }
+
+        .menu-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.4rem;
+        }
+
+        .menu-desc {
+            font-size: 0.8rem;
+            color: #5E5E6A;
+            margin-bottom: 0.8rem;
+            line-height: 1.4;
+        }
+
+        .menu-price {
+            font-weight: 800;
+            font-size: 1.3rem;
+            background: linear-gradient(135deg, #D45A1E, #F0983A);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 0.8rem;
+        }
+
+        .wa-order-btn {
+            background: linear-gradient(135deg, #25D366, #1da15a);
+            width: 100%;
+            border: none;
+            padding: 0.65rem;
+            border-radius: 40px;
+            font-weight: 600;
+            color: white;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-size: 0.85rem;
+            transition: opacity 0.2s;
+        }
+
+        .wa-order-btn:hover {
+            opacity: 0.9;
+        }
+
+        .chefs-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .chef-profile-card {
+            background: #FFFFFF;
+            border-radius: 28px;
+            padding: 1rem;
+            text-align: center;
+            border: 1px solid #F5EAE2;
+            transition: transform 0.2s;
+        }
+
+        .chef-profile-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .chef-image {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin: 0 auto 0.8rem;
+            display: block;
+            background: #FFE6DB;
+        }
+
+        .chef-name {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.2rem;
+        }
+
+        .chef-specialty {
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: #D45A1E;
+            margin-bottom: 0.6rem;
+        }
+
+        .chef-bio {
+            font-size: 0.8rem;
+            color: #5E5E6A;
+            margin-bottom: 1rem;
+            line-height: 1.4;
+        }
+
+        .hire-chef-btn {
+            background: transparent;
+            border: 1.5px solid #D45A1E;
+            padding: 0.6rem;
+            border-radius: 40px;
+            width: 100%;
+            font-weight: 600;
+            color: #D45A1E;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            font-size: 0.85rem;
+            transition: all 0.2s;
+        }
+
+        .hire-chef-btn:hover {
+            background: linear-gradient(135deg, #D45A1E, #F0983A);
+            color: white;
+            border-color: transparent;
+        }
+
+        .testimonials-section {
+            background: linear-gradient(145deg, #FEFAF7, #FCF6F0);
+            border-radius: 32px;
+            padding: 1.5rem 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .testimonials-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-top: 1.2rem;
+        }
+
+        .testimonial-card {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 24px;
+            padding: 1.2rem;
+            border: 1px solid rgba(224, 122, 44, 0.1);
+        }
+
+        .stars {
+            color: #F5A623;
+            margin-bottom: 0.6rem;
+            font-size: 0.85rem;
+        }
+
+        .testimonial-text {
+            font-weight: 500;
+            color: #2C2C2E;
+            margin-bottom: 0.6rem;
+            line-height: 1.4;
+            font-size: 0.85rem;
+        }
+
+        .customer-name {
+            font-weight: 600;
+            font-size: 0.75rem;
+            color: #D45A1E;
+        }
+
+        .process-section {
+            margin: 1rem 0;
+        }
+
+        .process-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin: 1.2rem 0;
+        }
+
+        .process-card {
+            background: #FFFFFF;
+            border-radius: 28px;
+            padding: 1.3rem;
+            text-align: center;
+            border: 1px solid #F0E3DA;
+        }
+
+        .process-icon {
+            font-size: 2rem;
+            background: linear-gradient(135deg, #D45A1E20, #F0983A20);
+            width: 55px;
+            height: 55px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 60px;
+            margin: 0 auto 0.8rem;
+            color: #D45A1E;
+        }
+
+        .process-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.6rem;
+        }
+
+        .process-card p {
+            font-size: 0.8rem;
+            color: #5E5E6A;
+            line-height: 1.4;
+        }
+
+        .wa-demo {
+            background: #F8F9FC;
+            border-radius: 16px;
+            padding: 0.6rem;
+            margin-top: 0.8rem;
+            font-size: 0.7rem;
+            font-family: monospace;
+            color: #2c2c2e;
+            border-left: 3px solid #D45A1E;
+            text-align: left;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #F0E3DA;
+            font-size: 0.7rem;
+            color: #8E8E98;
+        }
+
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(8px);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-container {
+            background: white;
+            width: 90%;
+            max-width: 500px;
+            max-height: 85vh;
+            border-radius: 32px;
+            overflow-y: auto;
+            transform: scale(0.95);
+            transition: transform 0.3s ease;
+        }
+
+        .modal-overlay.active .modal-container {
+            transform: scale(1);
+        }
+
+        .modal-header {
+            padding: 1.2rem 1.5rem;
+            border-bottom: 1px solid #F0E3DA;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            background: white;
+        }
+
+        .modal-header h2 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #D45A1E, #F0983A);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .modal-close {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #8E8E98;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+        }
+
+        .modal-body {
+            padding: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.2rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 0.4rem;
+            color: #2C2C2E;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1.5px solid #E8E8ED;
+            border-radius: 16px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #D45A1E;
+        }
+
+        .modal-submit-btn {
+            width: 100%;
+            padding: 0.85rem;
+            background: linear-gradient(135deg, #25D366, #1da15a);
+            border: none;
+            border-radius: 48px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            color: white;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 0.5rem;
+        }
+
         @media (min-width: 768px) {
-            .app-container { padding: 2rem 2rem 3rem; }
-            .hero-section h1 { font-size: 3.2rem; }
-            .menu-grid { grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; }
-            .chefs-grid { grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; }
-            .testimonials-grid { flex-direction: row; gap: 1.5rem; }
-            .process-grid { flex-direction: row; gap: 1.5rem; }
-            .process-card { flex: 1; }
+            .app-container {
+                padding: 2rem 2rem 3rem;
+            }
+            .hero-section h1 {
+                font-size: 3.2rem;
+            }
+            .menu-grid {
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+                gap: 1.5rem;
+            }
+            .chefs-grid {
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+                gap: 1.5rem;
+            }
+            .testimonials-grid {
+                flex-direction: row;
+                gap: 1.5rem;
+            }
+            .process-grid {
+                flex-direction: row;
+                gap: 1.5rem;
+            }
+            .process-card {
+                flex: 1;
+            }
         }
     </style>
 </head>
 <body>
+
 <div class="app-container">
     <div class="top-bar">
         <div class="logo">Yanah</div>
@@ -142,42 +696,132 @@
         <div class="section-title">How It Works</div>
         <div class="section-subhead">Order or hire a chef in seconds — fill the form, then send via WhatsApp</div>
         <div class="process-grid">
-            <div class="process-card"><div class="process-icon"><i class="fab fa-whatsapp"></i></div><h3>Order Process</h3><p>Click <strong>“Order”</strong> → Fill your details → Send via WhatsApp</p><div class="wa-demo">📱 Your name, address, phone, order details → Sent to Yanah</div></div>
-            <div class="process-card"><div class="process-icon"><i class="fas fa-user-chef"></i></div><h3>Hire a Chef</h3><p>Click <strong>“Hire Chef”</strong> → Fill event details → Send via WhatsApp</p><div class="wa-demo">👨‍🍳 Event info, date, guests, address → Sent to Yanah</div></div>
+            <div class="process-card">
+                <div class="process-icon"><i class="fab fa-whatsapp"></i></div>
+                <h3>Order Process</h3>
+                <p>Click <strong>"Order"</strong> → Fill your details → Send via WhatsApp</p>
+                <div class="wa-demo">📱 Your name, address, phone, order details → Sent to Yanah</div>
+            </div>
+            <div class="process-card">
+                <div class="process-icon"><i class="fas fa-user-chef"></i></div>
+                <h3>Hire a Chef</h3>
+                <p>Click <strong>"Hire Chef"</strong> → Fill event details → Send via WhatsApp</p>
+                <div class="wa-demo">👨‍🍳 Event info, date, guests, address → Sent to Yanah</div>
+            </div>
         </div>
     </div>
 
-    <footer><p>© 2026 Yanah — Chinese · Korean · Western Fusion. Premium ingredients, exceptional service.</p></footer>
+    <footer>
+        <p>© 2026 Yanah — Chinese · Korean · Western Fusion. Premium ingredients, exceptional service.</p>
+    </footer>
 </div>
 
 <!-- ORDER MODAL -->
-<div id="orderModal" class="modal-overlay"><div class="modal-container"><div class="modal-header"><h2><i class="fab fa-whatsapp"></i> Place Your Order</h2><button class="modal-close" onclick="closeOrderModal()">&times;</button></div><div class="modal-body"><form id="orderForm"><div class="form-group"><label>Your Name *</label><input type="text" id="orderName" placeholder="John Doe" required></div><div class="form-group"><label>Phone Number *</label><input type="tel" id="orderPhone" placeholder="+1 234 567 8900" required></div><div class="form-group"><label>Delivery Address *</label><textarea id="orderAddress" placeholder="Street, city, postal code" required></textarea></div><div class="form-group"><label>Order Details *</label><textarea id="orderDetails" placeholder="2x Mapo Tofu, 1x Jjamppong" required></textarea></div><div class="form-group"><label>Special Instructions</label><textarea id="orderInstructions" placeholder="Spice level, allergies, etc."></textarea></div><button type="submit" class="modal-submit-btn"><i class="fab fa-whatsapp"></i> Send Order</button></form></div></div></div>
+<div id="orderModal" class="modal-overlay">
+    <div class="modal-container">
+        <div class="modal-header">
+            <h2><i class="fab fa-whatsapp"></i> Place Your Order</h2>
+            <button class="modal-close" onclick="closeOrderModal()">&times;</button>
+        </div>
+        <div class="modal-body">
+            <form id="orderForm">
+                <div class="form-group">
+                    <label>Your Name *</label>
+                    <input type="text" id="orderName" placeholder="John Doe" required>
+                </div>
+                <div class="form-group">
+                    <label>Phone Number *</label>
+                    <input type="tel" id="orderPhone" placeholder="+1 234 567 8900" required>
+                </div>
+                <div class="form-group">
+                    <label>Delivery Address *</label>
+                    <textarea id="orderAddress" placeholder="Street, city, postal code" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Order Details *</label>
+                    <textarea id="orderDetails" placeholder="2x Mapo Tofu, 1x Jjamppong" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Special Instructions</label>
+                    <textarea id="orderInstructions" placeholder="Spice level, allergies, etc."></textarea>
+                </div>
+                <button type="submit" class="modal-submit-btn"><i class="fab fa-whatsapp"></i> Send Order</button>
+            </form>
+        </div>
+    </div>
+</div>
 
 <!-- HIRE MODAL -->
-<div id="hireModal" class="modal-overlay"><div class="modal-container"><div class="modal-header"><h2><i class="fas fa-user-chef"></i> Hire a Chef</h2><button class="modal-close" onclick="closeHireModal()">&times;</button></div><div class="modal-body"><form id="hireForm"><div class="form-group"><label>Your Name *</label><input type="text" id="hireName" placeholder="John Doe" required></div><div class="form-group"><label>Phone Number *</label><input type="tel" id="hirePhone" placeholder="+1 234 567 8900" required></div><div class="form-group"><label>Select Chef *</label><select id="hireChefName" required><option value="">Select a chef</option><option value="Chef Mei Lin">Chef Mei Lin - Sichuan & Cantonese</option><option value="Chef Jun-Ho Park">Chef Jun-Ho Park - Korean BBQ</option><option value="Chef Sophia Laurent">Chef Sophia Laurent - Western</option><option value="Chef Hae-Won Cho">Chef Hae-Won Cho - Korean-Chinese</option><option value="Chef Wei Zhang">Chef Wei Zhang - Dim Sum</option><option value="Chef Yuna Kim">Chef Yuna Kim - Vegan Korean</option><option value="Chef Liam O'Connor">Chef Liam O'Connor - Steakhouse</option></select></div><div class="form-group"><label>Event Type *</label><input type="text" id="hireEventType" placeholder="Private dinner, Birthday, Corporate" required></div><div class="form-group"><label>Event Date *</label><input type="date" id="hireDate" required></div><div class="form-group"><label>Number of Guests *</label><input type="number" id="hireGuests" placeholder="12" required></div><div class="form-group"><label>Event Address *</label><textarea id="hireAddress" placeholder="Full address" required></textarea></div><div class="form-group"><label>Special Requests</label><textarea id="hireRequests" placeholder="Menu preferences, dietary restrictions"></textarea></div><button type="submit" class="modal-submit-btn"><i class="fab fa-whatsapp"></i> Send Request</button></form></div></div></div>
+<div id="hireModal" class="modal-overlay">
+    <div class="modal-container">
+        <div class="modal-header">
+            <h2><i class="fas fa-user-chef"></i> Hire a Chef</h2>
+            <button class="modal-close" onclick="closeHireModal()">&times;</button>
+        </div>
+        <div class="modal-body">
+            <form id="hireForm">
+                <div class="form-group">
+                    <label>Your Name *</label>
+                    <input type="text" id="hireName" placeholder="John Doe" required>
+                </div>
+                <div class="form-group">
+                    <label>Phone Number *</label>
+                    <input type="tel" id="hirePhone" placeholder="+1 234 567 8900" required>
+                </div>
+                <div class="form-group">
+                    <label>Select Chef *</label>
+                    <select id="hireChefName" required>
+                        <option value="">Select a chef</option>
+                        <option value="Chef Mei Lin">Chef Mei Lin - Sichuan & Cantonese</option>
+                        <option value="Chef Jun-Ho Park">Chef Jun-Ho Park - Korean BBQ</option>
+                        <option value="Chef Sophia Laurent">Chef Sophia Laurent - Western</option>
+                        <option value="Chef Hae-Won Cho">Chef Hae-Won Cho - Korean-Chinese</option>
+                        <option value="Chef Wei Zhang">Chef Wei Zhang - Dim Sum</option>
+                        <option value="Chef Yuna Kim">Chef Yuna Kim - Vegan Korean</option>
+                        <option value="Chef Liam O'Connor">Chef Liam O'Connor - Steakhouse</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Event Type *</label>
+                    <input type="text" id="hireEventType" placeholder="Private dinner, Birthday, Corporate" required>
+                </div>
+                <div class="form-group">
+                    <label>Event Date *</label>
+                    <input type="date" id="hireDate" required>
+                </div>
+                <div class="form-group">
+                    <label>Number of Guests *</label>
+                    <input type="number" id="hireGuests" placeholder="12" required>
+                </div>
+                <div class="form-group">
+                    <label>Event Address *</label>
+                    <textarea id="hireAddress" placeholder="Full address" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Special Requests</label>
+                    <textarea id="hireRequests" placeholder="Menu preferences, dietary restrictions"></textarea>
+                </div>
+                <button type="submit" class="modal-submit-btn"><i class="fab fa-whatsapp"></i> Send Request</button>
+            </form>
+        </div>
+    </div>
+</div>
 
 <script>
-    // ============================================================
-    // UNIQUE IMAGES FOR EVERY DISH - Using reliable food photo CDN
-    // Each dish gets a different, relevant food image
-    // ============================================================
-    
+    // Food images for each dish
     const foodImages = {
-        // Chinese Dishes - unique authentic Chinese food
         "Mapo Tofu": "https://images.unsplash.com/photo-1589302168068-964664d93dc0?w=400&h=300&fit=crop",
         "Kung Pao Chicken": "https://images.unsplash.com/photo-1525755662778-989d0524087e?w=400&h=300&fit=crop",
         "Peking Duck Rolls": "https://images.unsplash.com/photo-1613514785940-daed07799d9b?w=400&h=300&fit=crop",
         "Sichuan Hot Pot Noodles": "https://images.unsplash.com/photo-1625937288498-6a2d3c9f6e9a?w=400&h=300&fit=crop",
         "Steamed Fish with Ginger": "https://images.unsplash.com/photo-1615141982883-c7ad0e69fd62?w=400&h=300&fit=crop",
         "Xiaolongbao": "https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?w=400&h=300&fit=crop",
-        // Korean Dishes - unique Korean cuisine
         "Jjamppong": "https://images.unsplash.com/photo-1623345786784-959be9001be9?w=400&h=300&fit=crop",
         "Kimchi Jjigae": "https://images.unsplash.com/photo-1627308595121-2f8b6ba7c5e8?w=400&h=300&fit=crop",
         "Korean Fried Chicken": "https://images.unsplash.com/photo-1598109133205-4687a8d7a7f6?w=400&h=300&fit=crop",
         "Bibimbap": "https://images.unsplash.com/photo-1633367187831-66d39c0f1aa8?w=400&h=300&fit=crop",
         "Bulgogi": "https://images.unsplash.com/photo-1627308595154-6d590e23784a?w=400&h=300&fit=crop",
         "Tteokbokki": "https://images.unsplash.com/photo-1631756104382-3fd8c5f01448?w=400&h=300&fit=crop",
-        // Western Dishes - unique Western cuisine
         "Truffle Carbonara": "https://images.unsplash.com/photo-1645112411344-5b9f9e6d8e5a?w=400&h=300&fit=crop",
         "BBQ Bacon Burger": "https://images.unsplash.com/photo-1550547660-d9450f859349?w=400&h=300&fit=crop",
         "Grilled Salmon": "https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?w=400&h=300&fit=crop",
@@ -185,8 +829,8 @@
         "French Onion Soup": "https://images.unsplash.com/photo-1625937288498-6a2d3c9f6e9a?w=400&h=300&fit=crop",
         "NY Cheesecake": "https://images.unsplash.com/photo-1533134242443-d4fd215305ad?w=400&h=300&fit=crop"
     };
-    
-    // Chef images - diverse professional portraits
+
+    // Chef images
     const chefImages = {
         "Chef Mei Lin": "https://randomuser.me/api/portraits/women/68.jpg",
         "Chef Jun-Ho Park": "https://randomuser.me/api/portraits/men/32.jpg",
@@ -196,12 +840,8 @@
         "Chef Yuna Kim": "https://randomuser.me/api/portraits/women/62.jpg",
         "Chef Liam O'Connor": "https://randomuser.me/api/portraits/men/52.jpg"
     };
-    // ============================================================
-    // All 18 dishes now have UNIQUE images from Unsplash!
-    // Each image is different and relevant to the dish.
-    // If any image fails to load, a fallback food image will show.
-    // ============================================================
 
+    // Menu data
     const chineseMenu = [
         { name: "Mapo Tofu", desc: "Silky tofu, minced pork, fermented broad bean paste, Sichuan peppercorns.", price: "$14.90" },
         { name: "Kung Pao Chicken", desc: "Stir-fried chicken, peanuts, dried chili, scallions, wok hei aroma.", price: "$16.50" },
@@ -247,40 +887,83 @@
         { name: "Sarah & Tom", text: "We hired Chef Jun-Ho for a private BBQ. The process was smooth!", rating: 5 }
     ];
 
+    // UPDATED PHONE NUMBER
     const businessNumber = "250792763860";
-    function sendToWhatsApp(message) { window.open(`https://wa.me/${businessNumber}?text=${encodeURIComponent(message)}`, '_blank'); }
-    function openOrderModal(dishName) { 
+
+    function sendToWhatsApp(message) {
+        window.open(`https://wa.me/${businessNumber}?text=${encodeURIComponent(message)}`, '_blank');
+    }
+
+    function openOrderModal(dishName) {
         const modal = document.getElementById('orderModal');
-        if(dishName) document.getElementById('orderDetails').value = `1x ${dishName}`;
-        else document.getElementById('orderDetails').value = '';
-        ['orderName','orderPhone','orderAddress','orderInstructions'].forEach(id => { if(document.getElementById(id)) document.getElementById(id).value = ''; });
+        if (dishName) {
+            document.getElementById('orderDetails').value = `1x ${dishName}`;
+        } else {
+            document.getElementById('orderDetails').value = '';
+        }
+        document.getElementById('orderName').value = '';
+        document.getElementById('orderPhone').value = '';
+        document.getElementById('orderAddress').value = '';
+        document.getElementById('orderInstructions').value = '';
         modal.classList.add('active');
     }
-    function closeOrderModal() { document.getElementById('orderModal').classList.remove('active'); }
+
+    function closeOrderModal() {
+        document.getElementById('orderModal').classList.remove('active');
+    }
+
     function openHireModal(chefName) {
         const modal = document.getElementById('hireModal');
-        if(chefName) {
+        if (chefName) {
             const select = document.getElementById('hireChefName');
-            for(let i=0;i<select.options.length;i++) if(select.options[i].value === chefName) select.selectedIndex = i;
+            for (let i = 0; i < select.options.length; i++) {
+                if (select.options[i].value === chefName) {
+                    select.selectedIndex = i;
+                }
+            }
         }
-        ['hireName','hirePhone','hireEventType','hireDate','hireGuests','hireAddress','hireRequests'].forEach(id => { if(document.getElementById(id)) document.getElementById(id).value = ''; });
+        document.getElementById('hireName').value = '';
+        document.getElementById('hirePhone').value = '';
+        document.getElementById('hireEventType').value = '';
+        document.getElementById('hireDate').value = '';
+        document.getElementById('hireGuests').value = '';
+        document.getElementById('hireAddress').value = '';
+        document.getElementById('hireRequests').value = '';
         modal.classList.add('active');
     }
-    function closeHireModal() { document.getElementById('hireModal').classList.remove('active'); }
-    
-    document.getElementById('orderForm')?.addEventListener('submit', (e) => {
+
+    function closeHireModal() {
+        document.getElementById('hireModal').classList.remove('active');
+    }
+
+    // Order form submission
+    document.getElementById('orderForm').addEventListener('submit', function(e) {
         e.preventDefault();
         const name = document.getElementById('orderName').value.trim();
         const phone = document.getElementById('orderPhone').value.trim();
         const address = document.getElementById('orderAddress').value.trim();
         const details = document.getElementById('orderDetails').value.trim();
         const instructions = document.getElementById('orderInstructions').value.trim();
-        if(!name || !phone || !address || !details) { alert('Please fill all required fields (*)'); return; }
-        const msg = `🍽️ NEW ORDER FROM YANAH 🍽️\n\n👤 Name: ${name}\n📞 Phone: ${phone}\n📍 Address: ${address}\n📝 Order: ${details}\n${instructions ? `💬 Instructions: ${instructions}\n` : ''}\n⏰ Please confirm my order.`;
-        closeOrderModal(); sendToWhatsApp(msg);
+
+        if (!name || !phone || !address || !details) {
+            alert('Please fill all required fields (*)');
+            return;
+        }
+
+        const msg = "🍽️ NEW ORDER FROM YANAH 🍽️\n\n" +
+                    "👤 Name: " + name + "\n" +
+                    "📞 Phone: " + phone + "\n" +
+                    "📍 Address: " + address + "\n" +
+                    "📝 Order: " + details + "\n" +
+                    (instructions ? "💬 Instructions: " + instructions + "\n" : "") +
+                    "⏰ Please confirm my order.";
+
+        closeOrderModal();
+        sendToWhatsApp(msg);
     });
-    
-    document.getElementById('hireForm')?.addEventListener('submit', (e) => {
+
+    // Hire form submission
+    document.getElementById('hireForm').addEventListener('submit', function(e) {
         e.preventDefault();
         const name = document.getElementById('hireName').value.trim();
         const phone = document.getElementById('hirePhone').value.trim();
@@ -290,65 +973,154 @@
         const guests = document.getElementById('hireGuests').value;
         const address = document.getElementById('hireAddress').value.trim();
         const requests = document.getElementById('hireRequests').value.trim();
-        if(!name || !phone || !chefName || !eventType || !date || !guests || !address) { alert('Please fill all required fields (*)'); return; }
-        const msg = `👨‍🍳 CHEF HIRING - YANAH 👨‍🍳\n\n👤 Name: ${name}\n📞 Phone: ${phone}\n👨‍🍳 Chef: ${chefName}\n🎉 Event: ${eventType}\n📅 Date: ${date}\n👥 Guests: ${guests}\n📍 Address: ${address}\n${requests ? `💬 Requests: ${requests}\n` : ''}\n⏰ Please contact me with availability.`;
-        closeHireModal(); sendToWhatsApp(msg);
+
+        if (!name || !phone || !chefName || !eventType || !date || !guests || !address) {
+            alert('Please fill all required fields (*)');
+            return;
+        }
+
+        const msg = "👨‍🍳 CHEF HIRING - YANAH 👨‍🍳\n\n" +
+                    "👤 Name: " + name + "\n" +
+                    "📞 Phone: " + phone + "\n" +
+                    "👨‍🍳 Chef: " + chefName + "\n" +
+                    "🎉 Event: " + eventType + "\n" +
+                    "📅 Date: " + date + "\n" +
+                    "👥 Guests: " + guests + "\n" +
+                    "📍 Address: " + address + "\n" +
+                    (requests ? "💬 Requests: " + requests + "\n" : "") +
+                    "⏰ Please contact me with availability.";
+
+        closeHireModal();
+        sendToWhatsApp(msg);
     });
-    
-    window.onclick = (e) => { if(e.target === document.getElementById('orderModal')) closeOrderModal(); if(e.target === document.getElementById('hireModal')) closeHireModal(); };
-    
+
+    // Close modals when clicking outside
+    window.onclick = function(e) {
+        if (e.target === document.getElementById('orderModal')) {
+            closeOrderModal();
+        }
+        if (e.target === document.getElementById('hireModal')) {
+            closeHireModal();
+        }
+    };
+
+    // Render menu by tab
     function renderMenuByTab(tab) {
         const container = document.getElementById('dynamicMenuGrid');
-        let items = tab === 'chinese' ? chineseMenu : tab === 'korean' ? koreanMenu : tab === 'western' ? westernMenu : allMenuItems;
+        let items = [];
+        if (tab === 'chinese') items = chineseMenu;
+        else if (tab === 'korean') items = koreanMenu;
+        else if (tab === 'western') items = westernMenu;
+        else items = allMenuItems;
+
         container.innerHTML = '';
-        items.forEach(item => {
+
+        items.forEach(function(item) {
             const imgUrl = foodImages[item.name] || "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=400&h=300&fit=crop";
-            const card = document.createElement('div'); card.className = 'menu-card';
-            card.innerHTML = `<img src="${imgUrl}" alt="${item.name}" class="menu-image" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=400&h=300&fit=crop'"><div class="menu-title">${item.name}</div><div class="menu-desc">${item.desc}</div><div class="menu-price">${item.price}</div><button class="wa-order-btn" data-dish="${item.name}"><i class="fab fa-whatsapp"></i> Order</button>`;
+            const card = document.createElement('div');
+            card.className = 'menu-card';
+            card.innerHTML = '<img src="' + imgUrl + '" alt="' + item.name + '" class="menu-image" loading="lazy" onerror="this.src=\'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=400&h=300&fit=crop\'">' +
+                            '<div class="menu-title">' + item.name + '</div>' +
+                            '<div class="menu-desc">' + item.desc + '</div>' +
+                            '<div class="menu-price">' + item.price + '</div>' +
+                            '<button class="wa-order-btn" data-dish="' + item.name + '"><i class="fab fa-whatsapp"></i> Order</button>';
             container.appendChild(card);
         });
-        document.querySelectorAll('.wa-order-btn').forEach(btn => btn.addEventListener('click', () => openOrderModal(btn.getAttribute('data-dish'))));
+
+        document.querySelectorAll('.wa-order-btn').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                openOrderModal(btn.getAttribute('data-dish'));
+            });
+        });
     }
-    
+
+    // Render chefs
     function renderChefs() {
         const container = document.getElementById('chefsGrid');
         container.innerHTML = '';
-        chefsProfiles.forEach(chef => {
+
+        chefsProfiles.forEach(function(chef) {
             const imgUrl = chefImages[chef.name] || "https://randomuser.me/api/portraits/lego/1.jpg";
-            const card = document.createElement('div'); card.className = 'chef-profile-card';
-            card.innerHTML = `<img src="${imgUrl}" alt="${chef.name}" class="chef-image" loading="lazy"><div class="chef-name">${chef.name}</div><div class="chef-specialty">${chef.specialty}</div><div class="chef-bio">${chef.bio}</div><button class="hire-chef-btn" data-chef="${chef.name}"><i class="fab fa-whatsapp"></i> Hire Chef</button>`;
+            const card = document.createElement('div');
+            card.className = 'chef-profile-card';
+            card.innerHTML = '<img src="' + imgUrl + '" alt="' + chef.name + '" class="chef-image" loading="lazy">' +
+                            '<div class="chef-name">' + chef.name + '</div>' +
+                            '<div class="chef-specialty">' + chef.specialty + '</div>' +
+                            '<div class="chef-bio">' + chef.bio + '</div>' +
+                            '<button class="hire-chef-btn" data-chef="' + chef.name + '"><i class="fab fa-whatsapp"></i> Hire Chef</button>';
             container.appendChild(card);
         });
-        document.querySelectorAll('.hire-chef-btn').forEach(btn => btn.addEventListener('click', () => openHireModal(btn.getAttribute('data-chef'))));
+
+        document.querySelectorAll('.hire-chef-btn').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                openHireModal(btn.getAttribute('data-chef'));
+            });
+        });
     }
-    
+
+    // Render testimonials
     function renderTestimonials() {
         const container = document.getElementById('testimonialsGrid');
         container.innerHTML = '';
-        testimonialsList.forEach(t => {
-            const stars = '★'.repeat(t.rating) + '☆'.repeat(5-t.rating);
-            container.innerHTML += `<div class="testimonial-card"><div class="stars">${stars}</div><div class="testimonial-text">“${t.text}”</div><div class="customer-name">— ${t.name}</div></div>`;
+
+        testimonialsList.forEach(function(t) {
+            let stars = '';
+            for (let i = 0; i < t.rating; i++) stars += '★';
+            for (let i = 0; i < 5 - t.rating; i++) stars += '☆';
+            container.innerHTML += '<div class="testimonial-card">' +
+                                    '<div class="stars">' + stars + '</div>' +
+                                    '<div class="testimonial-text">"' + t.text + '"</div>' +
+                                    '<div class="customer-name">— ' + t.name + '</div>' +
+                                    '</div>';
         });
     }
-    
-    document.querySelectorAll('[data-nav-link]').forEach(link => link.addEventListener('click', (e) => {
-        e.preventDefault(); const id = link.getAttribute('data-nav-link');
-        if(id === 'home') window.scrollTo({ top: 0, behavior: 'smooth' });
-        else document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }));
-    
-    document.getElementById('heroOrderBtn')?.addEventListener('click', () => openOrderModal());
-    document.getElementById('navOrderBtn')?.addEventListener('click', () => openOrderModal());
-    document.getElementById('exploreMenuBtn')?.addEventListener('click', () => document.getElementById('menu')?.scrollIntoView({ behavior: 'smooth' }));
-    
-    document.querySelectorAll('.tab-btn').forEach(btn => btn.addEventListener('click', () => {
-        document.querySelectorAll('.tab-btn').forEach(t => t.classList.remove('active'));
-        btn.classList.add('active'); renderMenuByTab(btn.getAttribute('data-tab'));
-    }));
-    
-    if('scrollRestoration' in history) history.scrollRestoration = 'manual';
-    window.addEventListener('load', () => window.scrollTo(0, 0));
-    renderMenuByTab('all'); renderChefs(); renderTestimonials();
+
+    // Navigation
+    document.querySelectorAll('[data-nav-link]').forEach(function(link) {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const id = link.getAttribute('data-nav-link');
+            if (id === 'home') {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            } else {
+                document.getElementById(id).scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    });
+
+    // Buttons
+    document.getElementById('heroOrderBtn').addEventListener('click', function() {
+        openOrderModal();
+    });
+    document.getElementById('navOrderBtn').addEventListener('click', function() {
+        openOrderModal();
+    });
+    document.getElementById('exploreMenuBtn').addEventListener('click', function() {
+        document.getElementById('menu').scrollIntoView({ behavior: 'smooth' });
+    });
+
+    // Tab buttons
+    document.querySelectorAll('.tab-btn').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            document.querySelectorAll('.tab-btn').forEach(function(t) {
+                t.classList.remove('active');
+            });
+            btn.classList.add('active');
+            renderMenuByTab(btn.getAttribute('data-tab'));
+        });
+    });
+
+    // Initial render
+    if ('scrollRestoration' in history) {
+        history.scrollRestoration = 'manual';
+    }
+    window.addEventListener('load', function() {
+        window.scrollTo(0, 0);
+    });
+    renderMenuByTab('all');
+    renderChefs();
+    renderTestimonials();
 </script>
+
 </body>
 </html>
