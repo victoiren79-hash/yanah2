@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=yes">
-    <title>Yanah | Chinese · Korean · Western | Premium Fusion Dining</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>YANAH | Food delivery & catering | Chinese · Korean · Western · Alive</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         * {
@@ -17,8 +17,7 @@
             font-family: 'Inter', sans-serif;
             background: #FFFFFF;
             color: #1C1C1E;
-            line-height: 1.4;
-            overflow-x: hidden;
+            line-height: 1.45;
         }
 
         html {
@@ -28,519 +27,457 @@
         .app-container {
             max-width: 1280px;
             margin: 0 auto;
-            padding: 1rem 1rem 2rem;
+            padding: 1rem 1.2rem 3rem;
         }
 
+        /* ========== HEADER ========== */
         .top-bar {
             display: flex;
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
-            gap: 0.75rem;
-            background: rgba(255, 255, 255, 0.98);
+            gap: 1rem;
+            background: rgba(255, 255, 255, 0.96);
+            backdrop-filter: blur(10px);
             position: sticky;
             top: 0;
             z-index: 100;
-            border-radius: 60px;
-            padding: 0.6rem 1.2rem;
-            margin-bottom: 0.75rem;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
-            backdrop-filter: blur(8px);
+            border-radius: 80px;
+            padding: 0.6rem 1.8rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.03);
+            border: 1px solid rgba(0,0,0,0.02);
         }
 
-        .logo {
-            font-size: 1.6rem;
+        .logo-group {
+            display: flex;
+            align-items: baseline;
+            flex-wrap: wrap;
+            gap: 0.3rem 0.7rem;
+        }
+        .logo-yanah {
+            font-size: 2rem;
             font-weight: 800;
+            letter-spacing: -0.5px;
             background: linear-gradient(135deg, #D45A1E, #F0983A);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
+        }
+        .logo-food {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #3A3A44;
+        }
+        .logo-tagline {
+            font-size: 0.7rem;
+            font-weight: 500;
+            color: #8E8E98;
         }
 
         .nav-items {
             display: flex;
-            gap: 0.9rem;
+            gap: 1rem;
             align-items: center;
             flex-wrap: wrap;
         }
-
         .nav-items a {
             text-decoration: none;
             color: #2C2C2E;
             font-weight: 500;
-            font-size: 0.8rem;
+            font-size: 0.85rem;
+            transition: color 0.2s;
             cursor: pointer;
         }
-
+        .nav-items a:hover {
+            color: #D45A1E;
+        }
         .btn-order-nav {
-            background: linear-gradient(135deg, #25D366, #20B859);
+            background: linear-gradient(135deg, #25D366, #1da15a);
             border: none;
-            padding: 0.4rem 1rem;
-            border-radius: 40px;
+            padding: 0.45rem 1.2rem;
+            border-radius: 60px;
             font-weight: 600;
-            font-size: 0.75rem;
+            font-size: 0.8rem;
             color: white;
             cursor: pointer;
             display: flex;
+            gap: 8px;
             align-items: center;
-            gap: 5px;
         }
 
+        /* ========== HERO ========== */
         .hero-section {
             text-align: center;
-            padding: 1rem 0 0.5rem;
+            padding: 1rem 0 1.2rem;
         }
-
         .hero-badge {
-            font-size: 0.65rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            background: linear-gradient(135deg, #D45A1E20, #F0983A20);
+            background: rgba(212,90,30,0.1);
             display: inline-block;
-            padding: 0.2rem 0.8rem;
-            border-radius: 40px;
-            color: #D45A1E;
+            padding: 0.2rem 1rem;
+            border-radius: 60px;
+            font-size: 0.7rem;
             font-weight: 700;
-            margin-bottom: 0.8rem;
+            color: #D45A1E;
+            margin-bottom: 1rem;
         }
-
         .hero-section h1 {
-            font-size: 2rem;
+            font-size: 2.2rem;
             font-weight: 800;
             letter-spacing: -0.02em;
-            line-height: 1.2;
-            max-width: 800px;
-            margin: 0 auto 0.6rem;
             background: linear-gradient(135deg, #1C1C1E, #4A3B2C);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
-            padding: 0 0.5rem;
+            max-width: 700px;
+            margin: 0 auto 0.8rem;
         }
-
         .hero-desc {
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             color: #5E5E6A;
             max-width: 620px;
             margin: 0 auto 1.2rem;
-            line-height: 1.45;
-            padding: 0 0.8rem;
         }
-
         .stats-row {
             display: flex;
             justify-content: center;
-            gap: 0.8rem;
-            margin: 0.8rem 0 1.2rem;
+            gap: 1.2rem;
             flex-wrap: wrap;
+            margin: 1rem 0 1.4rem;
         }
-
         .stat-item {
-            text-align: center;
-            background: rgba(255, 245, 235, 0.6);
-            padding: 0.3rem 0.9rem;
-            border-radius: 50px;
+            background: #FEFAF7;
+            padding: 0.3rem 1.2rem;
+            border-radius: 60px;
+            font-weight: 500;
         }
-
         .stat-number {
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             font-weight: 800;
             background: linear-gradient(135deg, #D45A1E, #F0983A);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
         }
-
-        .stat-label {
-            font-size: 0.65rem;
-            color: #6C6C74;
-            font-weight: 500;
-        }
-
         .action-buttons {
             display: flex;
+            gap: 1rem;
             justify-content: center;
-            gap: 0.8rem;
             flex-wrap: wrap;
-            margin: 0.5rem 0 1rem;
         }
-
-        .btn-primary-orange {
+        .btn-primary {
             background: linear-gradient(135deg, #D45A1E, #F0983A);
             border: none;
-            padding: 0.7rem 1.3rem;
-            border-radius: 48px;
+            padding: 0.7rem 1.6rem;
+            border-radius: 60px;
             font-weight: 700;
-            font-size: 0.85rem;
             color: white;
             cursor: pointer;
             display: inline-flex;
-            align-items: center;
             gap: 8px;
         }
-
-        .btn-outline-dark {
+        .btn-outline {
             background: transparent;
             border: 1.5px solid #E0E0E6;
-            padding: 0.7rem 1.3rem;
-            border-radius: 48px;
+            padding: 0.7rem 1.6rem;
+            border-radius: 60px;
             font-weight: 600;
-            font-size: 0.85rem;
-            color: #2C2C2E;
             cursor: pointer;
         }
 
-        .section-title {
+        /* ========== STAFFING CARD ========== */
+        .staffing-card {
+            background: linear-gradient(105deg, #FFF7F0, #FFFFFF);
+            border-radius: 28px;
+            padding: 1rem 1.8rem;
+            margin: 1.8rem 0 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            border: 1px solid rgba(212,90,30,0.2);
+        }
+        .staffing-text {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        .staffing-icon {
             font-size: 1.8rem;
+            color: #D45A1E;
+        }
+        .staffing-text p {
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+        .staffing-badge {
+            background: #D45A1E0c;
+            padding: 0.3rem 1rem;
+            border-radius: 40px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: #D45A1E;
+        }
+
+        /* Payment note */
+        .payment-note {
+            background: #F0F9FF;
+            border-radius: 20px;
+            padding: 0.6rem 1.2rem;
+            margin: 1rem auto;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: #0066CC;
+        }
+
+        /* ========== SECTION TITLES ========== */
+        .section-title {
+            font-size: 2rem;
             font-weight: 700;
             text-align: center;
-            margin: 2rem 0 0.3rem;
+            margin: 2.2rem 0 0.4rem;
             background: linear-gradient(135deg, #1C1C1E, #5A4A3A);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
         }
-
         .section-subhead {
             text-align: center;
             color: #6C6C74;
-            margin-bottom: 1.2rem;
+            margin-bottom: 1.6rem;
             font-size: 0.85rem;
-            padding: 0 1rem;
         }
 
+        /* ========== MENU TABS ========== */
         .menu-tab-header {
             display: flex;
             justify-content: center;
-            gap: 0.5rem;
+            gap: 0.6rem;
             flex-wrap: wrap;
-            margin: 1.2rem 0 1.5rem;
             background: #F9F9FC;
-            padding: 0.4rem;
-            border-radius: 60px;
-            width: 100%;
+            padding: 0.5rem;
+            border-radius: 80px;
+            margin: 1rem 0 2rem;
         }
-
         .tab-btn {
             background: transparent;
             border: none;
-            padding: 0.45rem 1rem;
-            font-size: 0.8rem;
+            padding: 0.5rem 1.1rem;
             font-weight: 600;
-            color: #5E5E6A;
+            font-size: 0.8rem;
+            border-radius: 50px;
             cursor: pointer;
-            border-radius: 40px;
             display: inline-flex;
-            align-items: center;
             gap: 6px;
-            white-space: nowrap;
+            color: #5E5E6A;
         }
-
         .tab-btn.active {
             background: linear-gradient(135deg, #D45A1E, #F0983A);
             color: white;
         }
 
+        /* ========== GRIDS ========== */
         .menu-grid {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 1rem;
-            margin: 0.5rem 0 1.5rem;
+            gap: 1.8rem;
+            margin: 1rem 0 2rem;
         }
-
         .menu-card {
-            background: #FFFFFF;
-            border-radius: 24px;
+            background: white;
+            border-radius: 28px;
             padding: 1rem;
             text-align: center;
-            border: 1px solid rgba(224, 122, 44, 0.08);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+            border: 1px solid rgba(224,122,44,0.1);
             transition: transform 0.2s;
         }
-
         .menu-card:hover {
-            transform: translateY(-4px);
+            transform: translateY(-5px);
         }
-
         .menu-image {
             width: 100%;
-            height: 180px;
+            height: 190px;
             object-fit: cover;
-            border-radius: 20px;
+            border-radius: 24px;
+            background: #FDF2E6;
             margin-bottom: 0.8rem;
-            background: #FDF5E6;
         }
-
         .menu-title {
-            font-size: 1.25rem;
+            font-size: 1.2rem;
             font-weight: 700;
-            margin-bottom: 0.4rem;
+            margin: 0.2rem 0 0.4rem;
         }
-
         .menu-desc {
             font-size: 0.8rem;
             color: #5E5E6A;
             margin-bottom: 0.8rem;
-            line-height: 1.4;
         }
-
         .menu-price {
-            font-weight: 800;
             font-size: 1.3rem;
+            font-weight: 800;
             background: linear-gradient(135deg, #D45A1E, #F0983A);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
-            margin-bottom: 0.8rem;
+            margin-bottom: 0.7rem;
         }
-
         .wa-order-btn {
-            background: linear-gradient(135deg, #25D366, #1da15a);
+            background: #25D366;
             width: 100%;
             border: none;
             padding: 0.65rem;
-            border-radius: 40px;
+            border-radius: 60px;
             font-weight: 600;
             color: white;
             cursor: pointer;
             display: flex;
-            align-items: center;
-            justify-content: center;
             gap: 8px;
-            font-size: 0.85rem;
-            transition: opacity 0.2s;
-        }
-
-        .wa-order-btn:hover {
-            opacity: 0.9;
+            justify-content: center;
         }
 
         .chefs-grid {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 1rem;
+            gap: 1.8rem;
             margin: 1rem 0;
         }
-
-        .chef-profile-card {
+        .chef-card {
             background: #FFFFFF;
-            border-radius: 28px;
-            padding: 1rem;
+            border-radius: 32px;
+            padding: 1.2rem;
             text-align: center;
-            border: 1px solid #F5EAE2;
-            transition: transform 0.2s;
+            border: 1px solid #F0E3DA;
         }
-
-        .chef-profile-card:hover {
-            transform: translateY(-4px);
-        }
-
-        .chef-image {
-            width: 120px;
-            height: 120px;
+        .chef-img {
+            width: 110px;
+            height: 110px;
             object-fit: cover;
             border-radius: 50%;
             margin: 0 auto 0.8rem;
-            display: block;
             background: #FFE6DB;
         }
-
-        .chef-name {
-            font-size: 1.2rem;
-            font-weight: 700;
-            margin-bottom: 0.2rem;
-        }
-
-        .chef-specialty {
-            font-size: 0.7rem;
-            font-weight: 600;
-            color: #D45A1E;
-            margin-bottom: 0.6rem;
-        }
-
-        .chef-bio {
-            font-size: 0.8rem;
-            color: #5E5E6A;
-            margin-bottom: 1rem;
-            line-height: 1.4;
-        }
-
         .hire-chef-btn {
             background: transparent;
             border: 1.5px solid #D45A1E;
             padding: 0.6rem;
-            border-radius: 40px;
+            border-radius: 60px;
             width: 100%;
             font-weight: 600;
             color: #D45A1E;
             cursor: pointer;
             display: flex;
-            align-items: center;
-            justify-content: center;
             gap: 6px;
-            font-size: 0.85rem;
-            transition: all 0.2s;
+            justify-content: center;
+            margin-top: 0.5rem;
         }
-
         .hire-chef-btn:hover {
             background: linear-gradient(135deg, #D45A1E, #F0983A);
             color: white;
             border-color: transparent;
         }
 
-        .testimonials-section {
-            background: linear-gradient(145deg, #FEFAF7, #FCF6F0);
+        /* ========== HOW IT WORKS ========== */
+        .steps-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin: 1.8rem 0 1rem;
+        }
+        .step-card {
+            background: #FEFCF9;
             border-radius: 32px;
-            padding: 1.5rem 1rem;
-            margin: 1.5rem 0;
-        }
-
-        .testimonials-grid {
+            padding: 1.2rem 1.2rem;
             display: flex;
-            flex-direction: column;
+            align-items: center;
             gap: 1rem;
-            margin-top: 1.2rem;
+            border: 1px solid #F3E7DF;
         }
-
-        .testimonial-card {
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: 24px;
-            padding: 1.2rem;
-            border: 1px solid rgba(224, 122, 44, 0.1);
-        }
-
-        .stars {
-            color: #F5A623;
-            margin-bottom: 0.6rem;
-            font-size: 0.85rem;
-        }
-
-        .testimonial-text {
-            font-weight: 500;
-            color: #2C2C2E;
-            margin-bottom: 0.6rem;
-            line-height: 1.4;
-            font-size: 0.85rem;
-        }
-
-        .customer-name {
-            font-weight: 600;
-            font-size: 0.75rem;
-            color: #D45A1E;
-        }
-
-        .process-section {
-            margin: 1rem 0;
-        }
-
-        .process-grid {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            margin: 1.2rem 0;
-        }
-
-        .process-card {
-            background: #FFFFFF;
-            border-radius: 28px;
-            padding: 1.3rem;
-            text-align: center;
-            border: 1px solid #F0E3DA;
-        }
-
-        .process-icon {
-            font-size: 2rem;
-            background: linear-gradient(135deg, #D45A1E20, #F0983A20);
-            width: 55px;
-            height: 55px;
+        .step-number {
+            background: linear-gradient(145deg, #D45A1E15, #F0983A15);
+            width: 54px;
+            height: 54px;
+            border-radius: 60px;
             display: flex;
             align-items: center;
             justify-content: center;
-            border-radius: 60px;
-            margin: 0 auto 0.8rem;
+            font-size: 1.7rem;
+            font-weight: 800;
             color: #D45A1E;
         }
-
-        .process-card h3 {
-            font-size: 1.2rem;
-            margin-bottom: 0.6rem;
+        .step-info h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 0.2rem;
         }
-
-        .process-card p {
+        .step-info p {
             font-size: 0.8rem;
             color: #5E5E6A;
-            line-height: 1.4;
         }
 
-        .wa-demo {
-            background: #F8F9FC;
-            border-radius: 16px;
-            padding: 0.6rem;
-            margin-top: 0.8rem;
-            font-size: 0.7rem;
-            font-family: monospace;
-            color: #2c2c2e;
-            border-left: 3px solid #D45A1E;
-            text-align: left;
+        /* ========== TESTIMONIALS ========== */
+        .testimonials-section {
+            background: linear-gradient(145deg, #FEFAF7, #FCF6F0);
+            border-radius: 36px;
+            padding: 2rem 1.2rem;
+            margin: 2rem 0;
+        }
+        .testimonials-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+            margin-top: 1.2rem;
+        }
+        .testimonial-card {
+            background: white;
+            border-radius: 24px;
+            padding: 1.2rem;
+        }
+        .stars {
+            color: #F5A623;
+            margin-bottom: 0.5rem;
         }
 
-        footer {
-            text-align: center;
-            margin-top: 2rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid #F0E3DA;
-            font-size: 0.7rem;
-            color: #8E8E98;
-        }
-
+        /* ========== MODALS (fixed close buttons) ========== */
         .modal-overlay {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.7);
-            backdrop-filter: blur(8px);
+            background: rgba(0,0,0,0.75);
+            backdrop-filter: blur(6px);
             z-index: 1000;
             display: flex;
             align-items: center;
             justify-content: center;
             opacity: 0;
             visibility: hidden;
-            transition: all 0.3s ease;
+            transition: 0.2s;
         }
-
         .modal-overlay.active {
             opacity: 1;
             visibility: visible;
         }
-
         .modal-container {
             background: white;
             width: 90%;
-            max-width: 500px;
-            max-height: 85vh;
-            border-radius: 32px;
-            overflow-y: auto;
-            transform: scale(0.95);
-            transition: transform 0.3s ease;
+            max-width: 520px;
+            border-radius: 36px;
+            overflow: hidden;
+            box-shadow: 0 20px 35px rgba(0,0,0,0.2);
         }
-
-        .modal-overlay.active .modal-container {
-            transform: scale(1);
-        }
-
         .modal-header {
-            padding: 1.2rem 1.5rem;
-            border-bottom: 1px solid #F0E3DA;
+            padding: 1rem 1.5rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            position: sticky;
-            top: 0;
+            border-bottom: 1px solid #F0E3DA;
             background: white;
         }
-
         .modal-header h2 {
             font-size: 1.3rem;
             font-weight: 700;
@@ -549,94 +486,91 @@
             background-clip: text;
             color: transparent;
         }
-
         .modal-close {
-            background: none;
+            background: #f2f2f2;
             border: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-            color: #8E8E98;
-            width: 32px;
-            height: 32px;
+            font-size: 1.6rem;
+            width: 36px;
+            height: 36px;
             border-radius: 50%;
-        }
-
-        .modal-body {
-            padding: 1.5rem;
-        }
-
-        .form-group {
-            margin-bottom: 1.2rem;
-        }
-
-        .form-group label {
-            display: block;
-            font-size: 0.8rem;
-            font-weight: 600;
-            margin-bottom: 0.4rem;
-            color: #2C2C2E;
-        }
-
-        .form-group input,
-        .form-group textarea,
-        .form-group select {
-            width: 100%;
-            padding: 0.75rem;
-            border: 1.5px solid #E8E8ED;
-            border-radius: 16px;
-            font-family: 'Inter', sans-serif;
-            font-size: 0.85rem;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus,
-        .form-group select:focus {
-            outline: none;
-            border-color: #D45A1E;
-        }
-
-        .modal-submit-btn {
-            width: 100%;
-            padding: 0.85rem;
-            background: linear-gradient(135deg, #25D366, #1da15a);
-            border: none;
-            border-radius: 48px;
-            font-weight: 700;
-            font-size: 0.9rem;
-            color: white;
             cursor: pointer;
+            color: #555;
             display: flex;
             align-items: center;
             justify-content: center;
+            transition: all 0.2s;
+        }
+        .modal-close:hover {
+            background: #e0e0e0;
+            color: #D45A1E;
+        }
+        .modal-body {
+            padding: 1.5rem;
+            max-height: 65vh;
+            overflow-y: auto;
+        }
+        .form-group {
+            margin-bottom: 1rem;
+        }
+        .form-group label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            display: block;
+            margin-bottom: 0.3rem;
+            color: #2C2C2E;
+        }
+        .form-group input, .form-group textarea, .form-group select {
+            width: 100%;
+            padding: 0.7rem;
+            border-radius: 18px;
+            border: 1px solid #ddd;
+            font-family: inherit;
+            font-size: 0.85rem;
+        }
+        .modal-submit-btn {
+            background: #25D366;
+            width: 100%;
+            border: none;
+            padding: 0.8rem;
+            border-radius: 60px;
+            font-weight: 700;
+            color: white;
+            display: flex;
             gap: 8px;
+            justify-content: center;
+            cursor: pointer;
             margin-top: 0.5rem;
+        }
+        footer {
+            text-align: center;
+            margin-top: 2.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #F0E3DA;
+            font-size: 0.7rem;
+            color: #8E8E98;
         }
 
         @media (min-width: 768px) {
-            .app-container {
-                padding: 2rem 2rem 3rem;
-            }
-            .hero-section h1 {
-                font-size: 3.2rem;
-            }
             .menu-grid {
                 grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-                gap: 1.5rem;
             }
             .chefs-grid {
-                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-                gap: 1.5rem;
+                grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+            }
+            .steps-wrapper {
+                flex-direction: row;
+                gap: 1.8rem;
+            }
+            .step-card {
+                flex: 1;
+                flex-direction: column;
+                text-align: center;
             }
             .testimonials-grid {
                 flex-direction: row;
-                gap: 1.5rem;
             }
-            .process-grid {
-                flex-direction: row;
-                gap: 1.5rem;
-            }
-            .process-card {
-                flex: 1;
+            .hero-section h1 {
+                font-size: 3rem;
             }
         }
     </style>
@@ -644,75 +578,92 @@
 <body>
 
 <div class="app-container">
+
+    <!-- HEADER: YANAH + Food + delivery & catering -->
     <div class="top-bar">
-        <div class="logo">Yanah</div>
+        <div class="logo-group">
+            <span class="logo-yanah">YANAH</span>
+            <span class="logo-food">Food</span>
+            <span class="logo-tagline">delivery & catering</span>
+        </div>
         <div class="nav-items">
-            <a href="#" data-nav-link="home">Home</a>
-            <a href="#" data-nav-link="menu">Menu</a>
-            <a href="#" data-nav-link="chefs">Chefs</a>
-            <a href="#" data-nav-link="testimonials">Reviews</a>
+            <a data-nav="home">Home</a>
+            <a data-nav="menu">Menu</a>
+            <a data-nav="chefs">Chefs</a>
+            <a data-nav="how">How it works</a>
             <button class="btn-order-nav" id="navOrderBtn"><i class="fab fa-whatsapp"></i> Order</button>
         </div>
     </div>
 
+    <!-- HERO -->
     <div class="hero-section" id="home">
-        <div class="hero-badge">✦ SIGNATURE FUSION ✦</div>
-        <h1>Delicious Meals,<br>Delivered Fresh</h1>
-        <p class="hero-desc">Order your favorite dishes made with the freshest ingredients, lovingly crafted by our expert chefs. Chinese, Korean, Western — delivered straight to your door.</p>
+        <div class="hero-badge">✦ FRESH & FUSION ✦</div>
+        <h1>Delicious meals,<br>delivered with soul</h1>
+        <p class="hero-desc">Chinese, Korean, Western, and Live-animal specialties (Goat, Pork) — plus expert staffing for hotels & restaurants.</p>
         <div class="stats-row">
-            <div class="stat-item"><span class="stat-number">280+</span><div class="stat-label">Dishes</div></div>
-            <div class="stat-item"><span class="stat-number">15k+</span><div class="stat-label">Happy Customers</div></div>
-            <div class="stat-item"><span class="stat-number">18</span><div class="stat-label">Master Chefs</div></div>
+            <div class="stat-item"><span class="stat-number">290+</span> dishes</div>
+            <div class="stat-item"><span class="stat-number">15k+</span> happy customers</div>
+            <div class="stat-item"><span class="stat-number">20</span> master chefs</div>
+        </div>
+        <!-- MOMO PAYMENT NOTICE -->
+        <div class="payment-note">
+            <i class="fas fa-mobile-alt"></i> <strong>💰 Payment: Mobile Money (MoMo)</strong> — Only MoMo accepted
         </div>
         <div class="action-buttons">
-            <button class="btn-primary-orange" id="heroOrderBtn"><i class="fab fa-whatsapp"></i> Order Now</button>
-            <button class="btn-outline-dark" id="exploreMenuBtn">Explore Menu</button>
+            <button class="btn-primary" id="heroOrderBtn"><i class="fab fa-whatsapp"></i> Order now</button>
+            <button class="btn-outline" id="exploreMenuBtn">Explore menu</button>
         </div>
     </div>
 
+    <!-- STAFFING SERVICE DESCRIPTION -->
+    <div class="staffing-card">
+        <div class="staffing-text">
+            <i class="fas fa-handshake staffing-icon"></i>
+            <p><strong>👔 Professional staffing service:</strong> We also provide expert hiring of professional staff for Hotels & Restaurants — chefs, kitchen assistants, F&B personnel.</p>
+        </div>
+        <div class="staffing-badge"><i class="fas fa-briefcase"></i> B2B staffing</div>
+    </div>
+
+    <!-- MENU SECTION (Chinese, Korean, Western, ALIVE) -->
     <div id="menu">
-        <div class="section-title">Our Menu</div>
+        <div class="section-title">Our menu</div>
         <div class="menu-tab-header">
             <button class="tab-btn active" data-tab="all"><i class="fas fa-utensils"></i> All</button>
-            <button class="tab-btn" data-tab="chinese"><i class="fas fa-dragon"></i> 🇨🇳 Chinese</button>
-            <button class="tab-btn" data-tab="korean"><i class="fas fa-drumstick-bite"></i> 🇰🇷 Korean</button>
-            <button class="tab-btn" data-tab="western"><i class="fas fa-cheese-burger"></i> 🇺🇸 Western</button>
+            <button class="tab-btn" data-tab="chinese"><i class="fas fa-dragon"></i> Chinese</button>
+            <button class="tab-btn" data-tab="korean"><i class="fas fa-drumstick-bite"></i> Korean</button>
+            <button class="tab-btn" data-tab="western"><i class="fas fa-cheese-burger"></i> Western</button>
+            <button class="tab-btn" data-tab="alive"><i class="fas fa-paw"></i> Alive 🐐</button>
         </div>
         <div id="dynamicMenuGrid" class="menu-grid"></div>
     </div>
 
+    <!-- CHEFS SECTION -->
     <div id="chefs">
-        <div class="section-title">Hire Our Master Chefs</div>
-        <div class="section-subhead">Private dining · Events · Culinary experiences</div>
+        <div class="section-title">Hire our master chefs</div>
+        <div class="section-subhead">Private dining, events, restaurant staffing — choose your expert</div>
         <div class="chefs-grid" id="chefsGrid"></div>
     </div>
 
-    <div id="testimonials" class="testimonials-section">
-        <div class="section-title" style="margin-top:0;">What Our Customers Say</div>
-        <div class="testimonials-grid" id="testimonialsGrid"></div>
-    </div>
-
-    <div id="how-it-works" class="process-section">
-        <div class="section-title">How It Works</div>
-        <div class="section-subhead">Order or hire a chef in seconds — fill the form, then send via WhatsApp</div>
-        <div class="process-grid">
-            <div class="process-card">
-                <div class="process-icon"><i class="fab fa-whatsapp"></i></div>
-                <h3>Order Process</h3>
-                <p>Click <strong>"Order"</strong> → Fill your details → Send via WhatsApp</p>
-                <div class="wa-demo">📱 Your name, address, phone, order details → Sent to Yanah</div>
-            </div>
-            <div class="process-card">
-                <div class="process-icon"><i class="fas fa-user-chef"></i></div>
-                <h3>Hire a Chef</h3>
-                <p>Click <strong>"Hire Chef"</strong> → Fill event details → Send via WhatsApp</p>
-                <div class="wa-demo">👨‍🍳 Event info, date, guests, address → Sent to Yanah</div>
-            </div>
+    <!-- HOW IT WORKS (4 steps) -->
+    <div id="how">
+        <div class="section-title">How it works</div>
+        <div class="section-subhead">Simple process: order food, hire a chef, or request staffing — all via WhatsApp. Only MoMo payment.</div>
+        <div class="steps-wrapper">
+            <div class="step-card"><div class="step-number">1</div><div class="step-info"><h3>Choose & customize</h3><p>Pick from Chinese, Korean, Western, or Alive (Goat, Pork). Need a chef/staff? Click "Hire Chef".</p></div></div>
+            <div class="step-card"><div class="step-number">2</div><div class="step-info"><h3>Fill short form</h3><p>Add your name, address, event details or staffing requirements.</p></div></div>
+            <div class="step-card"><div class="step-number">3</div><div class="step-info"><h3>Send via WhatsApp</h3><p>One click redirects to Yanah WhatsApp. We confirm your order/staffing request.</p></div></div>
+            <div class="step-card"><div class="step-number">4</div><div class="step-info"><h3>Enjoy or staff placed</h3><p>Get your meal delivered or professional staff assigned. Pay with MoMo.</p></div></div>
         </div>
     </div>
 
+    <!-- TESTIMONIALS -->
+    <div class="testimonials-section">
+        <div class="section-title" style="margin-top:0;">Customer love</div>
+        <div class="testimonials-grid" id="testimonialsGrid"></div>
+    </div>
+
     <footer>
-        <p>© 2026 Yanah — Chinese · Korean · Western Fusion. Premium ingredients, exceptional service.</p>
+        <p>© 2026 YANAH — Food delivery & catering · Chinese · Korean · Western · Alive · Professional staffing · Only Mobile Money (MoMo) payment</p>
     </footer>
 </div>
 
@@ -720,32 +671,21 @@
 <div id="orderModal" class="modal-overlay">
     <div class="modal-container">
         <div class="modal-header">
-            <h2><i class="fab fa-whatsapp"></i> Place Your Order</h2>
-            <button class="modal-close" onclick="closeOrderModal()">&times;</button>
+            <h2><i class="fab fa-whatsapp"></i> Place your order</h2>
+            <button class="modal-close" id="closeOrderModalBtn">&times;</button>
         </div>
         <div class="modal-body">
             <form id="orderForm">
-                <div class="form-group">
-                    <label>Your Name *</label>
-                    <input type="text" id="orderName" placeholder="John Doe" required>
-                </div>
-                <div class="form-group">
-                    <label>Phone Number *</label>
-                    <input type="tel" id="orderPhone" placeholder="+1 234 567 8900" required>
-                </div>
-                <div class="form-group">
-                    <label>Delivery Address *</label>
-                    <textarea id="orderAddress" placeholder="Street, city, postal code" required></textarea>
-                </div>
-                <div class="form-group">
-                    <label>Order Details *</label>
-                    <textarea id="orderDetails" placeholder="2x Mapo Tofu, 1x Jjamppong" required></textarea>
-                </div>
-                <div class="form-group">
-                    <label>Special Instructions</label>
-                    <textarea id="orderInstructions" placeholder="Spice level, allergies, etc."></textarea>
-                </div>
-                <button type="submit" class="modal-submit-btn"><i class="fab fa-whatsapp"></i> Send Order</button>
+                <div class="form-group"><label>Full name *</label><input type="text" id="orderName" placeholder="Gondje Victoire" required></div>
+                <div class="form-group"><label>Phone number *</label><input type="tel" id="orderPhone" placeholder="23597731248" required></div>
+                <div class="form-group"><label>Delivery address *</label><textarea id="orderAddress" placeholder="Unilak, street, city" required></textarea></div>
+                <div class="form-group"><label>Dish name *</label><input type="text" id="orderDish" placeholder="Mapo Tofu" required></div>
+                <div class="form-group"><label>Quantity *</label><input type="number" id="orderQuantity" value="1" min="1" required></div>
+                <div class="form-group"><label>Price per item ($) *</label><input type="text" id="orderPriceEach" placeholder="14.50" required></div>
+                <div class="form-group"><label>Delivery time window</label><input type="text" id="orderTime" placeholder="12:00 PM - 1:00 PM"></div>
+                <div class="form-group"><label>Special instructions</label><textarea id="orderInstructions" placeholder="I don't like cold food"></textarea></div>
+                <div class="form-group"><label>Payment method</label><input type="text" value="Mobile Money (MoMo)" readonly style="background:#f5f5f5;"></div>
+                <button type="submit" class="modal-submit-btn"><i class="fab fa-whatsapp"></i> Send order via WhatsApp</button>
             </form>
         </div>
     </div>
@@ -755,60 +695,81 @@
 <div id="hireModal" class="modal-overlay">
     <div class="modal-container">
         <div class="modal-header">
-            <h2><i class="fas fa-user-chef"></i> Hire a Chef</h2>
-            <button class="modal-close" onclick="closeHireModal()">&times;</button>
+            <h2><i class="fas fa-user-chef"></i> Hire chef / staff</h2>
+            <button class="modal-close" id="closeHireModalBtn">&times;</button>
         </div>
         <div class="modal-body">
             <form id="hireForm">
-                <div class="form-group">
-                    <label>Your Name *</label>
-                    <input type="text" id="hireName" placeholder="John Doe" required>
-                </div>
-                <div class="form-group">
-                    <label>Phone Number *</label>
-                    <input type="tel" id="hirePhone" placeholder="+1 234 567 8900" required>
-                </div>
-                <div class="form-group">
-                    <label>Select Chef *</label>
-                    <select id="hireChefName" required>
-                        <option value="">Select a chef</option>
-                        <option value="Chef Mei Lin">Chef Mei Lin - Sichuan & Cantonese</option>
-                        <option value="Chef Jun-Ho Park">Chef Jun-Ho Park - Korean BBQ</option>
-                        <option value="Chef Sophia Laurent">Chef Sophia Laurent - Western</option>
-                        <option value="Chef Hae-Won Cho">Chef Hae-Won Cho - Korean-Chinese</option>
-                        <option value="Chef Wei Zhang">Chef Wei Zhang - Dim Sum</option>
-                        <option value="Chef Yuna Kim">Chef Yuna Kim - Vegan Korean</option>
-                        <option value="Chef Liam O'Connor">Chef Liam O'Connor - Steakhouse</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label>Event Type *</label>
-                    <input type="text" id="hireEventType" placeholder="Private dinner, Birthday, Corporate" required>
-                </div>
-                <div class="form-group">
-                    <label>Event Date *</label>
-                    <input type="date" id="hireDate" required>
-                </div>
-                <div class="form-group">
-                    <label>Number of Guests *</label>
-                    <input type="number" id="hireGuests" placeholder="12" required>
-                </div>
-                <div class="form-group">
-                    <label>Event Address *</label>
-                    <textarea id="hireAddress" placeholder="Full address" required></textarea>
-                </div>
-                <div class="form-group">
-                    <label>Special Requests</label>
-                    <textarea id="hireRequests" placeholder="Menu preferences, dietary restrictions"></textarea>
-                </div>
-                <button type="submit" class="modal-submit-btn"><i class="fab fa-whatsapp"></i> Send Request</button>
+                <div class="form-group"><label>Your name *</label><input type="text" id="hireName" placeholder="Gondje Victoire" required></div>
+                <div class="form-group"><label>Phone number *</label><input type="tel" id="hirePhone" placeholder="23597731248" required></div>
+                <div class="form-group"><label>Select professional *</label><select id="hireChefName" required><option value="">Choose</option><option value="Chef Mei Lin - Sichuan">Chef Mei Lin (Chinese)</option><option value="Chef Jun-Ho Park">Chef Jun-Ho (Korean BBQ)</option><option value="Chef Sophia Laurent">Chef Sophia (Western)</option><option value="Staffing: Kitchen assistant">Kitchen assistant</option><option value="Staffing: F&B Manager">F&B Manager</option></select></div>
+                <div class="form-group"><label>Event / Staffing details *</label><input type="text" id="hireEventType" placeholder="Private dinner / Hotel staffing" required></div>
+                <div class="form-group"><label>Event date *</label><input type="date" id="hireDate" required></div>
+                <div class="form-group"><label>Number of guests (if event)</label><input type="text" id="hireGuests" placeholder="12 guests"></div>
+                <div class="form-group"><label>Address *</label><textarea id="hireAddress" placeholder="Full venue address" required></textarea></div>
+                <div class="form-group"><label>Special requests</label><textarea id="hireRequests" placeholder="Menu preferences, dietary restrictions"></textarea></div>
+                <div class="form-group"><label>Payment</label><input type="text" value="Mobile Money (MoMo) only" readonly style="background:#f5f5f5;"></div>
+                <button type="submit" class="modal-submit-btn"><i class="fab fa-whatsapp"></i> Send request via WhatsApp</button>
             </form>
         </div>
     </div>
 </div>
 
 <script>
-    // Food images for each dish
+    // BUSINESS WHATSAPP
+    const BUSINESS_PHONE = "250792763860";
+
+    // ALIVE CATEGORY (Goat, Pork)
+    const aliveItems = [
+        { name: "Live Goat (spicy curry)", desc: "Fresh goat, slow-cooked with traditional spices. Requires pre-order.", price: "$32.90" },
+        { name: "Live Pork (roasted whole leg)", desc: "Crispy skin, tender meat, served with tangy sauce.", price: "$28.50" }
+    ];
+    
+    const chineseMenu = [
+        { name: "Mapo Tofu", desc: "Silky tofu, minced pork, Sichuan peppercorns.", price: "$14.90" },
+        { name: "Kung Pao Chicken", desc: "Stir-fried chicken, peanuts, dried chili.", price: "$16.50" },
+        { name: "Peking Duck Rolls", desc: "Crispy duck, cucumber, hoisin sauce.", price: "$22.90" },
+        { name: "Sichuan Hot Pot Noodles", desc: "Mala broth, beef slices, napa cabbage, glass noodles.", price: "$17.50" },
+        { name: "Steamed Fish with Ginger", desc: "Whole sea bass, ginger, soy, cilantro, light and fragrant.", price: "$24.00" },
+        { name: "Xiaolongbao", desc: "Pork soup dumplings, delicate wrapper, ginger vinegar dip.", price: "$12.90" }
+    ];
+    
+    const koreanMenu = [
+        { name: "Jjamppong", desc: "Spicy seafood noodle soup with squid, mussels, shrimp, vegetables.", price: "$18.90" },
+        { name: "Kimchi Jjigae", desc: "Aged kimchi stew with pork belly, tofu, green onions.", price: "$15.50" },
+        { name: "Korean Fried Chicken", desc: "Double-fried, sweet-spicy gochujang glaze.", price: "$16.90" },
+        { name: "Bibimbap", desc: "Mixed rice with veggies, beef, gochujang, sunny egg.", price: "$15.00" },
+        { name: "Bulgogi", desc: "Marinated thinly sliced beef, grilled with onions.", price: "$19.50" },
+        { name: "Tteokbokki", desc: "Rice cakes in spicy sweet chili sauce with fish cakes.", price: "$11.90" }
+    ];
+    
+    const westernMenu = [
+        { name: "Truffle Carbonara", desc: "Creamy parmesan, pancetta, black truffle oil, fettuccine.", price: "$19.90" },
+        { name: "BBQ Bacon Burger", desc: "Angus beef, cheddar, bacon, BBQ sauce, caramelized onions.", price: "$16.50" },
+        { name: "Grilled Salmon", desc: "Fresh Atlantic salmon, lemon herb butter, vegetables.", price: "$23.90" },
+        { name: "Margherita Pizza", desc: "San Marzano tomatoes, mozzarella, basil, olive oil.", price: "$14.00" },
+        { name: "French Onion Soup", desc: "Caramelized onions, rich broth, gruyère cheese.", price: "$9.50" },
+        { name: "NY Cheesecake", desc: "Creamy cheesecake with berry coulis.", price: "$8.90" }
+    ];
+    
+    const allMenuItems = [...chineseMenu, ...koreanMenu, ...westernMenu, ...aliveItems];
+
+    const chefsData = [
+        { name: "Chef Mei Lin", specialty: "Sichuan & Cantonese Master", bio: "20+ years of wok artistry. Former executive chef at top Shanghai restaurants.", img: "https://randomuser.me/api/portraits/women/68.jpg" },
+        { name: "Chef Jun-Ho Park", specialty: "Korean BBQ & Royal Cuisine", bio: "Seoul-trained specialist in table-side BBQ and fermented flavors.", img: "https://randomuser.me/api/portraits/men/32.jpg" },
+        { name: "Chef Sophia Laurent", specialty: "Modern Western & Pastry", bio: "French-Italian techniques, seasonal ingredients, private dining.", img: "https://randomuser.me/api/portraits/women/44.jpg" },
+        { name: "Chef Hae-Won Cho", specialty: "Korean-Chinese Fusion", bio: "Creative dishes like kimchi-mapotofu. Interactive chef's table.", img: "https://randomuser.me/api/portraits/women/55.jpg" },
+        { name: "Chef Wei Zhang", specialty: "Dim Sum & Noodle Expert", bio: "Hand-pulled noodles, xiaolongbao, authentic workshops.", img: "https://randomuser.me/api/portraits/men/45.jpg" },
+        { name: "Chef Yuna Kim", specialty: "Korean Temple & Vegan", bio: "Plant-based Korean cuisine, fermented sauces.", img: "https://randomuser.me/api/portraits/women/62.jpg" }
+    ];
+    
+    const testimonialsList = [
+        { name: "Lina Chen", text: "Jjamppong is the best I've had outside Seoul. Yanah's fusion is exceptional!", rating: 5 },
+        { name: "Marcus W.", text: "Bulgogi and Truffle Carbonara arrived hot. Hiring chefs is seamless.", rating: 5 },
+        { name: "Sarah & Tom", text: "We hired Chef Jun-Ho for a private BBQ. The process was smooth!", rating: 5 }
+    ];
+
+    // Original working images
     const foodImages = {
         "Mapo Tofu": "https://images.unsplash.com/photo-1589302168068-964664d93dc0?w=400&h=300&fit=crop",
         "Kung Pao Chicken": "https://images.unsplash.com/photo-1525755662778-989d0524087e?w=400&h=300&fit=crop",
@@ -827,300 +788,252 @@
         "Grilled Salmon": "https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?w=400&h=300&fit=crop",
         "Margherita Pizza": "https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=400&h=300&fit=crop",
         "French Onion Soup": "https://images.unsplash.com/photo-1625937288498-6a2d3c9f6e9a?w=400&h=300&fit=crop",
-        "NY Cheesecake": "https://images.unsplash.com/photo-1533134242443-d4fd215305ad?w=400&h=300&fit=crop"
+        "NY Cheesecake": "https://images.unsplash.com/photo-1533134242443-d4fd215305ad?w=400&h=300&fit=crop",
+        "Live Goat (spicy curry)": "https://images.unsplash.com/photo-1603360946369-dc9bb6258143?w=400&h=300&fit=crop",
+        "Live Pork (roasted whole leg)": "https://images.unsplash.com/photo-1544025162-d76694265947?w=400&h=300&fit=crop"
     };
+    
+    const defaultImg = "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=400&h=300&fit=crop";
 
-    // Chef images
-    const chefImages = {
-        "Chef Mei Lin": "https://randomuser.me/api/portraits/women/68.jpg",
-        "Chef Jun-Ho Park": "https://randomuser.me/api/portraits/men/32.jpg",
-        "Chef Sophia Laurent": "https://randomuser.me/api/portraits/women/44.jpg",
-        "Chef Hae-Won Cho": "https://randomuser.me/api/portraits/women/55.jpg",
-        "Chef Wei Zhang": "https://randomuser.me/api/portraits/men/45.jpg",
-        "Chef Yuna Kim": "https://randomuser.me/api/portraits/women/62.jpg",
-        "Chef Liam O'Connor": "https://randomuser.me/api/portraits/men/52.jpg"
-    };
-
-    // Menu data
-    const chineseMenu = [
-        { name: "Mapo Tofu", desc: "Silky tofu, minced pork, fermented broad bean paste, Sichuan peppercorns.", price: "$14.90" },
-        { name: "Kung Pao Chicken", desc: "Stir-fried chicken, peanuts, dried chili, scallions, wok hei aroma.", price: "$16.50" },
-        { name: "Peking Duck Rolls", desc: "Crispy duck skin, cucumber, spring onion, hoisin sauce, pancakes.", price: "$22.90" },
-        { name: "Sichuan Hot Pot Noodles", desc: "Mala broth, beef slices, napa cabbage, glass noodles.", price: "$17.50" },
-        { name: "Steamed Fish with Ginger", desc: "Whole sea bass, ginger, soy, cilantro, light and fragrant.", price: "$24.00" },
-        { name: "Xiaolongbao", desc: "Pork soup dumplings, delicate wrapper, ginger vinegar dip.", price: "$12.90" }
-    ];
-
-    const koreanMenu = [
-        { name: "Jjamppong", desc: "Spicy seafood noodle soup with squid, mussels, shrimp, vegetables.", price: "$18.90" },
-        { name: "Kimchi Jjigae", desc: "Aged kimchi stew with pork belly, tofu, green onions.", price: "$15.50" },
-        { name: "Korean Fried Chicken", desc: "Double-fried, sweet-spicy gochujang glaze.", price: "$16.90" },
-        { name: "Bibimbap", desc: "Mixed rice with veggies, beef, gochujang, sunny egg.", price: "$15.00" },
-        { name: "Bulgogi", desc: "Marinated thinly sliced beef, grilled with onions.", price: "$19.50" },
-        { name: "Tteokbokki", desc: "Rice cakes in spicy sweet chili sauce with fish cakes.", price: "$11.90" }
-    ];
-
-    const westernMenu = [
-        { name: "Truffle Carbonara", desc: "Creamy parmesan, pancetta, black truffle oil, fettuccine.", price: "$19.90" },
-        { name: "BBQ Bacon Burger", desc: "Angus beef, cheddar, bacon, BBQ sauce, caramelized onions.", price: "$16.50" },
-        { name: "Grilled Salmon", desc: "Fresh Atlantic salmon, lemon herb butter, vegetables.", price: "$23.90" },
-        { name: "Margherita Pizza", desc: "San Marzano tomatoes, mozzarella, basil, olive oil.", price: "$14.00" },
-        { name: "French Onion Soup", desc: "Caramelized onions, rich broth, gruyère cheese.", price: "$9.50" },
-        { name: "NY Cheesecake", desc: "Creamy cheesecake with berry coulis.", price: "$8.90" }
-    ];
-
-    const allMenuItems = [...chineseMenu, ...koreanMenu, ...westernMenu];
-
-    const chefsProfiles = [
-        { name: "Chef Mei Lin", specialty: "Sichuan & Cantonese Master", bio: "20+ years of wok artistry. Former executive chef at top Shanghai restaurants." },
-        { name: "Chef Jun-Ho Park", specialty: "Korean BBQ & Royal Cuisine", bio: "Seoul-trained specialist in table-side BBQ and fermented flavors." },
-        { name: "Chef Sophia Laurent", specialty: "Modern Western & Pastry", bio: "French-Italian techniques, seasonal ingredients, private dining." },
-        { name: "Chef Hae-Won Cho", specialty: "Korean-Chinese Fusion", bio: "Creative dishes like kimchi-mapotofu. Interactive chef's table." },
-        { name: "Chef Wei Zhang", specialty: "Dim Sum & Noodle Expert", bio: "Hand-pulled noodles, xiaolongbao, authentic workshops." },
-        { name: "Chef Yuna Kim", specialty: "Korean Temple & Vegan", bio: "Plant-based Korean cuisine, fermented sauces." },
-        { name: "Chef Liam O'Connor", specialty: "Steakhouse & Grills", bio: "Expert in dry-aged steaks, wood-fire grilling." }
-    ];
-
-    const testimonialsList = [
-        { name: "Lina Chen", text: "Jjamppong is the best I've had outside Seoul. Yanah's fusion is exceptional!", rating: 5 },
-        { name: "Marcus W.", text: "Bulgogi and Truffle Carbonara arrived hot. Hiring chefs is seamless.", rating: 5 },
-        { name: "Sarah & Tom", text: "We hired Chef Jun-Ho for a private BBQ. The process was smooth!", rating: 5 }
-    ];
-
-    // UPDATED PHONE NUMBER
-    const businessNumber = "250792763860";
-
-    function sendToWhatsApp(message) {
-        window.open(`https://wa.me/${businessNumber}?text=${encodeURIComponent(message)}`, '_blank');
+    function renderMenu(tab) {
+        let items = [];
+        if (tab === "chinese") items = chineseMenu;
+        else if (tab === "korean") items = koreanMenu;
+        else if (tab === "western") items = westernMenu;
+        else if (tab === "alive") items = aliveItems;
+        else items = allMenuItems;
+        
+        const container = document.getElementById("dynamicMenuGrid");
+        container.innerHTML = "";
+        
+        items.forEach(item => {
+            const imgUrl = foodImages[item.name] || defaultImg;
+            const card = document.createElement("div");
+            card.className = "menu-card";
+            card.innerHTML = `
+                <img src="${imgUrl}" alt="${item.name}" class="menu-image" loading="lazy" onerror="this.src='${defaultImg}'">
+                <div class="menu-title">${item.name}</div>
+                <div class="menu-desc">${item.desc}</div>
+                <div class="menu-price">${item.price}</div>
+                <button class="wa-order-btn" data-dish="${item.name}" data-price="${item.price.replace('$','')}">
+                    <i class="fab fa-whatsapp"></i> Order
+                </button>
+            `;
+            container.appendChild(card);
+        });
+        
+        document.querySelectorAll(".wa-order-btn").forEach(btn => {
+            btn.addEventListener("click", () => {
+                const dish = btn.getAttribute("data-dish");
+                const price = btn.getAttribute("data-price");
+                openOrderModal(dish, price);
+            });
+        });
     }
 
-    function openOrderModal(dishName) {
-        const modal = document.getElementById('orderModal');
+    function renderChefs() {
+        const grid = document.getElementById("chefsGrid");
+        grid.innerHTML = "";
+        chefsData.forEach(chef => {
+            const card = document.createElement("div");
+            card.className = "chef-card";
+            card.innerHTML = `
+                <img src="${chef.img}" class="chef-img" loading="lazy">
+                <div class="menu-title" style="font-size:1.1rem;">${chef.name}</div>
+                <div style="color:#D45A1E; font-weight:600; margin-bottom:0.5rem;">${chef.specialty}</div>
+                <div class="menu-desc">${chef.bio}</div>
+                <button class="hire-chef-btn" data-chef="${chef.name}">
+                    <i class="fab fa-whatsapp"></i> Hire chef
+                </button>
+            `;
+            grid.appendChild(card);
+        });
+        
+        document.querySelectorAll(".hire-chef-btn").forEach(btn => {
+            btn.addEventListener("click", () => openHireModal(btn.getAttribute("data-chef")));
+        });
+    }
+
+    function renderTestimonials() {
+        const cont = document.getElementById("testimonialsGrid");
+        cont.innerHTML = "";
+        testimonialsList.forEach(t => {
+            let stars = "★★★★★".slice(0, t.rating) + "☆☆☆☆☆".slice(t.rating);
+            cont.innerHTML += `
+                <div class="testimonial-card">
+                    <div class="stars">${stars}</div>
+                    <div class="testimonial-text">"${t.text}"</div>
+                    <div class="customer-name" style="font-weight:600; margin-top:0.5rem;">— ${t.name}</div>
+                </div>
+            `;
+        });
+    }
+
+    function openOrderModal(dishName = "", priceEach = "") {
+        const modal = document.getElementById("orderModal");
         if (dishName) {
-            document.getElementById('orderDetails').value = `1x ${dishName}`;
+            document.getElementById("orderDish").value = dishName;
+            if (priceEach) document.getElementById("orderPriceEach").value = priceEach;
         } else {
-            document.getElementById('orderDetails').value = '';
+            document.getElementById("orderDish").value = "";
+            document.getElementById("orderPriceEach").value = "";
         }
-        document.getElementById('orderName').value = '';
-        document.getElementById('orderPhone').value = '';
-        document.getElementById('orderAddress').value = '';
-        document.getElementById('orderInstructions').value = '';
-        modal.classList.add('active');
+        document.getElementById("orderName").value = "";
+        document.getElementById("orderPhone").value = "";
+        document.getElementById("orderAddress").value = "";
+        document.getElementById("orderQuantity").value = "1";
+        document.getElementById("orderTime").value = "";
+        document.getElementById("orderInstructions").value = "";
+        modal.classList.add("active");
     }
 
-    function closeOrderModal() {
-        document.getElementById('orderModal').classList.remove('active');
+    function closeOrderModal() { 
+        document.getElementById("orderModal").classList.remove("active"); 
+    }
+    
+    function closeHireModal() { 
+        document.getElementById("hireModal").classList.remove("active"); 
     }
 
     function openHireModal(chefName) {
-        const modal = document.getElementById('hireModal');
+        const modal = document.getElementById("hireModal");
         if (chefName) {
-            const select = document.getElementById('hireChefName');
+            const select = document.getElementById("hireChefName");
             for (let i = 0; i < select.options.length; i++) {
-                if (select.options[i].value === chefName) {
+                if (select.options[i].value.includes(chefName)) {
                     select.selectedIndex = i;
+                    break;
                 }
             }
         }
-        document.getElementById('hireName').value = '';
-        document.getElementById('hirePhone').value = '';
-        document.getElementById('hireEventType').value = '';
-        document.getElementById('hireDate').value = '';
-        document.getElementById('hireGuests').value = '';
-        document.getElementById('hireAddress').value = '';
-        document.getElementById('hireRequests').value = '';
-        modal.classList.add('active');
+        document.getElementById("hireName").value = "";
+        document.getElementById("hirePhone").value = "";
+        document.getElementById("hireEventType").value = "";
+        document.getElementById("hireDate").value = "";
+        document.getElementById("hireGuests").value = "";
+        document.getElementById("hireAddress").value = "";
+        document.getElementById("hireRequests").value = "";
+        modal.classList.add("active");
     }
 
-    function closeHireModal() {
-        document.getElementById('hireModal').classList.remove('active');
+    function sendWhatsApp(msg) {
+        window.open(`https://wa.me/${BUSINESS_PHONE}?text=${encodeURIComponent(msg)}`, "_blank");
     }
 
-    // Order form submission
-    document.getElementById('orderForm').addEventListener('submit', function(e) {
+    // ORDER FORM submission
+    document.getElementById("orderForm").addEventListener("submit", (e) => {
         e.preventDefault();
-        const name = document.getElementById('orderName').value.trim();
-        const phone = document.getElementById('orderPhone').value.trim();
-        const address = document.getElementById('orderAddress').value.trim();
-        const details = document.getElementById('orderDetails').value.trim();
-        const instructions = document.getElementById('orderInstructions').value.trim();
-
-        if (!name || !phone || !address || !details) {
-            alert('Please fill all required fields (*)');
+        const name = document.getElementById("orderName").value.trim();
+        const phone = document.getElementById("orderPhone").value.trim();
+        const address = document.getElementById("orderAddress").value.trim();
+        const dish = document.getElementById("orderDish").value.trim();
+        const qty = parseInt(document.getElementById("orderQuantity").value);
+        const priceEachRaw = document.getElementById("orderPriceEach").value.trim().replace('$','');
+        const priceEach = parseFloat(priceEachRaw);
+        const timeSlot = document.getElementById("orderTime").value.trim() || "As soon as possible";
+        const instructions = document.getElementById("orderInstructions").value.trim();
+        
+        if (!name || !phone || !address || !dish || isNaN(qty) || isNaN(priceEach)) {
+            alert("Please fill all required fields correctly.");
             return;
         }
-
-        const msg = "🍽️ NEW ORDER FROM YANAH 🍽️\n\n" +
-                    "👤 Name: " + name + "\n" +
-                    "📞 Phone: " + phone + "\n" +
-                    "📍 Address: " + address + "\n" +
-                    "📝 Order: " + details + "\n" +
-                    (instructions ? "💬 Instructions: " + instructions + "\n" : "") +
-                    "⏰ Please confirm my order.";
-
+        
+        const total = (qty * priceEach).toFixed(2);
+        const msg = `🍽️ *NEW ORDER - Yanah* 🍽️\n\n` +
+                    `*Customer Details:*\n` +
+                    `👤 Name: ${name}\n` +
+                    `📞 Phone: ${phone}\n\n` +
+                    `*Order Details:*\n` +
+                    `🍛 Dish: ${dish}\n` +
+                    `🔢 Quantity: ${qty}\n` +
+                    `💰 Price: $${priceEach.toFixed(2)} each\n` +
+                    `💵 Total: $${total}\n\n` +
+                    `*Delivery Information:*\n` +
+                    `📍 Address: ${address}\n` +
+                    `⏰ Time: ${timeSlot}\n\n` +
+                    `*Special Instructions:* ${instructions || "None"}\n\n` +
+                    `*Payment:* Mobile Money (MoMo)\n\n` +
+                    `Please confirm availability. Thank you!`;
+        
         closeOrderModal();
-        sendToWhatsApp(msg);
+        sendWhatsApp(msg);
     });
 
-    // Hire form submission
-    document.getElementById('hireForm').addEventListener('submit', function(e) {
+    // HIRE FORM submission
+    document.getElementById("hireForm").addEventListener("submit", (e) => {
         e.preventDefault();
-        const name = document.getElementById('hireName').value.trim();
-        const phone = document.getElementById('hirePhone').value.trim();
-        const chefName = document.getElementById('hireChefName').value;
-        const eventType = document.getElementById('hireEventType').value.trim();
-        const date = document.getElementById('hireDate').value;
-        const guests = document.getElementById('hireGuests').value;
-        const address = document.getElementById('hireAddress').value.trim();
-        const requests = document.getElementById('hireRequests').value.trim();
-
-        if (!name || !phone || !chefName || !eventType || !date || !guests || !address) {
-            alert('Please fill all required fields (*)');
+        const name = document.getElementById("hireName").value.trim();
+        const phone = document.getElementById("hirePhone").value.trim();
+        const chef = document.getElementById("hireChefName").value;
+        const eventType = document.getElementById("hireEventType").value.trim();
+        const date = document.getElementById("hireDate").value;
+        const guests = document.getElementById("hireGuests").value.trim();
+        const address = document.getElementById("hireAddress").value.trim();
+        const requests = document.getElementById("hireRequests").value.trim();
+        
+        if (!name || !phone || !chef || !eventType || !date || !address) {
+            alert("Please fill all required fields.");
             return;
         }
-
-        const msg = "👨‍🍳 CHEF HIRING - YANAH 👨‍🍳\n\n" +
-                    "👤 Name: " + name + "\n" +
-                    "📞 Phone: " + phone + "\n" +
-                    "👨‍🍳 Chef: " + chefName + "\n" +
-                    "🎉 Event: " + eventType + "\n" +
-                    "📅 Date: " + date + "\n" +
-                    "👥 Guests: " + guests + "\n" +
-                    "📍 Address: " + address + "\n" +
-                    (requests ? "💬 Requests: " + requests + "\n" : "") +
-                    "⏰ Please contact me with availability.";
-
+        
+        const msg = `👨‍🍳 *NEW HIRING REQUEST - Yanah* 👨‍🍳\n\n` +
+                    `*Customer Details:*\n` +
+                    `👤 Name: ${name}\n` +
+                    `📞 Phone: ${phone}\n\n` +
+                    `*Hiring Details:*\n` +
+                    `👨‍🍳 Professional: ${chef}\n` +
+                    `🎉 Event/Staffing: ${eventType}\n` +
+                    `📅 Date: ${date}\n` +
+                    `👥 Guests (if event): ${guests || "N/A"}\n` +
+                    `📍 Address: ${address}\n\n` +
+                    `*Special Requests:* ${requests || "None"}\n\n` +
+                    `*Payment:* Mobile Money (MoMo) will be arranged.\n\n` +
+                    `Please confirm availability and pricing. Thank you!`;
+        
         closeHireModal();
-        sendToWhatsApp(msg);
+        sendWhatsApp(msg);
     });
 
-    // Close modals when clicking outside
-    window.onclick = function(e) {
-        if (e.target === document.getElementById('orderModal')) {
-            closeOrderModal();
-        }
-        if (e.target === document.getElementById('hireModal')) {
-            closeHireModal();
-        }
+    // Close buttons
+    document.getElementById("closeOrderModalBtn").addEventListener("click", closeOrderModal);
+    document.getElementById("closeHireModalBtn").addEventListener("click", closeHireModal);
+    
+    // Close modal when clicking outside
+    window.onclick = (e) => {
+        if (e.target === document.getElementById("orderModal")) closeOrderModal();
+        if (e.target === document.getElementById("hireModal")) closeHireModal();
     };
 
-    // Render menu by tab
-    function renderMenuByTab(tab) {
-        const container = document.getElementById('dynamicMenuGrid');
-        let items = [];
-        if (tab === 'chinese') items = chineseMenu;
-        else if (tab === 'korean') items = koreanMenu;
-        else if (tab === 'western') items = westernMenu;
-        else items = allMenuItems;
-
-        container.innerHTML = '';
-
-        items.forEach(function(item) {
-            const imgUrl = foodImages[item.name] || "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=400&h=300&fit=crop";
-            const card = document.createElement('div');
-            card.className = 'menu-card';
-            card.innerHTML = '<img src="' + imgUrl + '" alt="' + item.name + '" class="menu-image" loading="lazy" onerror="this.src=\'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=400&h=300&fit=crop\'">' +
-                            '<div class="menu-title">' + item.name + '</div>' +
-                            '<div class="menu-desc">' + item.desc + '</div>' +
-                            '<div class="menu-price">' + item.price + '</div>' +
-                            '<button class="wa-order-btn" data-dish="' + item.name + '"><i class="fab fa-whatsapp"></i> Order</button>';
-            container.appendChild(card);
+    // Tab switching
+    document.querySelectorAll(".tab-btn").forEach(btn => {
+        btn.addEventListener("click", () => {
+            document.querySelectorAll(".tab-btn").forEach(b => b.classList.remove("active"));
+            btn.classList.add("active");
+            renderMenu(btn.getAttribute("data-tab"));
         });
-
-        document.querySelectorAll('.wa-order-btn').forEach(function(btn) {
-            btn.addEventListener('click', function() {
-                openOrderModal(btn.getAttribute('data-dish'));
-            });
-        });
-    }
-
-    // Render chefs
-    function renderChefs() {
-        const container = document.getElementById('chefsGrid');
-        container.innerHTML = '';
-
-        chefsProfiles.forEach(function(chef) {
-            const imgUrl = chefImages[chef.name] || "https://randomuser.me/api/portraits/lego/1.jpg";
-            const card = document.createElement('div');
-            card.className = 'chef-profile-card';
-            card.innerHTML = '<img src="' + imgUrl + '" alt="' + chef.name + '" class="chef-image" loading="lazy">' +
-                            '<div class="chef-name">' + chef.name + '</div>' +
-                            '<div class="chef-specialty">' + chef.specialty + '</div>' +
-                            '<div class="chef-bio">' + chef.bio + '</div>' +
-                            '<button class="hire-chef-btn" data-chef="' + chef.name + '"><i class="fab fa-whatsapp"></i> Hire Chef</button>';
-            container.appendChild(card);
-        });
-
-        document.querySelectorAll('.hire-chef-btn').forEach(function(btn) {
-            btn.addEventListener('click', function() {
-                openHireModal(btn.getAttribute('data-chef'));
-            });
-        });
-    }
-
-    // Render testimonials
-    function renderTestimonials() {
-        const container = document.getElementById('testimonialsGrid');
-        container.innerHTML = '';
-
-        testimonialsList.forEach(function(t) {
-            let stars = '';
-            for (let i = 0; i < t.rating; i++) stars += '★';
-            for (let i = 0; i < 5 - t.rating; i++) stars += '☆';
-            container.innerHTML += '<div class="testimonial-card">' +
-                                    '<div class="stars">' + stars + '</div>' +
-                                    '<div class="testimonial-text">"' + t.text + '"</div>' +
-                                    '<div class="customer-name">— ' + t.name + '</div>' +
-                                    '</div>';
-        });
-    }
+    });
 
     // Navigation
-    document.querySelectorAll('[data-nav-link]').forEach(function(link) {
-        link.addEventListener('click', function(e) {
+    document.querySelectorAll("[data-nav]").forEach(link => {
+        link.addEventListener("click", (e) => {
             e.preventDefault();
-            const id = link.getAttribute('data-nav-link');
-            if (id === 'home') {
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            } else {
-                document.getElementById(id).scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }
+            const target = link.getAttribute("data-nav");
+            if (target === "home") window.scrollTo({ top: 0, behavior: "smooth" });
+            else if (target === "menu") document.getElementById("menu").scrollIntoView({ behavior: "smooth" });
+            else if (target === "chefs") document.getElementById("chefs").scrollIntoView({ behavior: "smooth" });
+            else if (target === "how") document.getElementById("how").scrollIntoView({ behavior: "smooth" });
         });
     });
-
-    // Buttons
-    document.getElementById('heroOrderBtn').addEventListener('click', function() {
-        openOrderModal();
-    });
-    document.getElementById('navOrderBtn').addEventListener('click', function() {
-        openOrderModal();
-    });
-    document.getElementById('exploreMenuBtn').addEventListener('click', function() {
-        document.getElementById('menu').scrollIntoView({ behavior: 'smooth' });
-    });
-
-    // Tab buttons
-    document.querySelectorAll('.tab-btn').forEach(function(btn) {
-        btn.addEventListener('click', function() {
-            document.querySelectorAll('.tab-btn').forEach(function(t) {
-                t.classList.remove('active');
-            });
-            btn.classList.add('active');
-            renderMenuByTab(btn.getAttribute('data-tab'));
-        });
-    });
+    
+    // Button handlers
+    document.getElementById("heroOrderBtn").addEventListener("click", () => openOrderModal());
+    document.getElementById("navOrderBtn").addEventListener("click", () => openOrderModal());
+    document.getElementById("exploreMenuBtn").addEventListener("click", () => document.getElementById("menu").scrollIntoView({ behavior: "smooth" }));
 
     // Initial render
-    if ('scrollRestoration' in history) {
-        history.scrollRestoration = 'manual';
-    }
-    window.addEventListener('load', function() {
-        window.scrollTo(0, 0);
-    });
-    renderMenuByTab('all');
+    renderMenu("all");
     renderChefs();
     renderTestimonials();
 </script>
-
 </body>
 </html>
