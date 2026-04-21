@@ -30,7 +30,7 @@
             padding: 1rem 1.2rem 3rem;
         }
 
-        /* ========== HEADER ========== */
+        /* ========== HEADER - COMPACT ON PC ========== */
         .top-bar {
             display: flex;
             justify-content: space-between;
@@ -47,16 +47,35 @@
             margin-bottom: 1.5rem;
             box-shadow: 0 4px 18px rgba(0, 0, 0, 0.03);
             border: 1px solid rgba(0,0,0,0.02);
+            min-height: 70px;
         }
-
+        
         .logo-group {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            line-height: 1;
+        }
+        
+        /* Desktop: large logo with negative margins to keep header compact */
+        .logo-img {
+            height: 180px;
+            width: auto;
+            display: block;
+            margin: -50px 0;
+            object-fit: contain;
+        }
+        
+        .logo-text-group {
             display: flex;
             align-items: baseline;
             flex-wrap: wrap;
-            gap: 0.3rem 0.7rem;
+            gap: 0rem;
         }
+        
         .logo-yanah {
-            font-size: 2rem;
+            font-size: 1.5rem;
             font-weight: 800;
             letter-spacing: -0.5px;
             background: linear-gradient(135deg, #D45A1E, #F0983A);
@@ -64,15 +83,19 @@
             background-clip: text;
             color: transparent;
         }
+        
         .logo-food {
-            font-size: 1.1rem;
+            font-size: 0.85rem;
             font-weight: 600;
             color: #3A3A44;
+            margin-left: 0;
         }
+        
         .logo-tagline {
-            font-size: 0.7rem;
+            font-size: 0.6rem;
             font-weight: 500;
             color: #8E8E98;
+            margin-left: 0.3rem;
         }
 
         .nav-items {
@@ -104,6 +127,54 @@
             display: flex;
             gap: 8px;
             align-items: center;
+        }
+
+        /* ========== MOBILE - CLEAN AND COMPACT ========== */
+        @media (max-width: 768px) {
+            .top-bar {
+                flex-direction: column;
+                align-items: stretch;
+                padding: 0.8rem 1.2rem;
+                border-radius: 40px;
+                min-height: auto;
+            }
+            
+            .logo-group {
+                justify-content: center;
+                gap: 0.5rem;
+            }
+            
+            /* Mobile: smaller logo, no negative margins needed */
+            .logo-img {
+                height: 65px;
+                margin: 0;
+            }
+            
+            .logo-yanah {
+                font-size: 1.2rem;
+            }
+            
+            .logo-food {
+                font-size: 0.7rem;
+            }
+            
+            .logo-tagline {
+                font-size: 0.5rem;
+            }
+            
+            .nav-items {
+                justify-content: center;
+                gap: 0.8rem;
+            }
+            
+            .nav-items a {
+                font-size: 0.75rem;
+            }
+            
+            .btn-order-nav {
+                padding: 0.35rem 1rem;
+                font-size: 0.7rem;
+            }
         }
 
         /* ========== HERO ========== */
@@ -441,7 +512,7 @@
             margin-bottom: 0.5rem;
         }
 
-        /* ========== MODALS (fixed close buttons) ========== */
+        /* ========== MODALS ========== */
         .modal-overlay {
             position: fixed;
             top: 0;
@@ -579,12 +650,10 @@
 
 <div class="app-container">
 
-    <!-- HEADER: YANAH + Food + delivery & catering -->
+    <!-- HEADER: LOGO IMAGE + YANAH~Food text -->
     <div class="top-bar">
         <div class="logo-group">
-            <span class="logo-yanah">YANAH</span>
-            <span class="logo-food">Food</span>
-            <span class="logo-tagline">delivery & catering</span>
+            <img src="yanah.png" alt="Yanah Logo" class="logo-img" onerror="this.style.display='none'">
         </div>
         <div class="nav-items">
             <a data-nav="home">Home</a>
@@ -595,7 +664,7 @@
         </div>
     </div>
 
-    <!-- HERO -->
+    <!-- REST OF THE PAGE - SAME AS BEFORE -->
     <div class="hero-section" id="home">
         <div class="hero-badge">✦ FRESH & FUSION ✦</div>
         <h1>Delicious meals,<br>delivered with soul</h1>
@@ -605,7 +674,6 @@
             <div class="stat-item"><span class="stat-number">15k+</span> happy customers</div>
             <div class="stat-item"><span class="stat-number">20</span> master chefs</div>
         </div>
-        <!-- MOMO PAYMENT NOTICE -->
         <div class="payment-note">
             <i class="fas fa-mobile-alt"></i> <strong>💰 Payment: Mobile Money (MoMo)</strong> — Only MoMo accepted
         </div>
@@ -615,7 +683,6 @@
         </div>
     </div>
 
-    <!-- STAFFING SERVICE DESCRIPTION -->
     <div class="staffing-card">
         <div class="staffing-text">
             <i class="fas fa-handshake staffing-icon"></i>
@@ -624,7 +691,6 @@
         <div class="staffing-badge"><i class="fas fa-briefcase"></i> B2B staffing</div>
     </div>
 
-    <!-- MENU SECTION (Chinese, Korean, Western, ALIVE) -->
     <div id="menu">
         <div class="section-title">Our menu</div>
         <div class="menu-tab-header">
@@ -637,14 +703,12 @@
         <div id="dynamicMenuGrid" class="menu-grid"></div>
     </div>
 
-    <!-- CHEFS SECTION -->
     <div id="chefs">
         <div class="section-title">Hire our master chefs</div>
         <div class="section-subhead">Private dining, events, restaurant staffing — choose your expert</div>
         <div class="chefs-grid" id="chefsGrid"></div>
     </div>
 
-    <!-- HOW IT WORKS (4 steps) -->
     <div id="how">
         <div class="section-title">How it works</div>
         <div class="section-subhead">Simple process: order food, hire a chef, or request staffing — all via WhatsApp. Only MoMo payment.</div>
@@ -656,7 +720,6 @@
         </div>
     </div>
 
-    <!-- TESTIMONIALS -->
     <div class="testimonials-section">
         <div class="section-title" style="margin-top:0;">Customer love</div>
         <div class="testimonials-grid" id="testimonialsGrid"></div>
@@ -769,7 +832,6 @@
         { name: "Sarah & Tom", text: "We hired Chef Jun-Ho for a private BBQ. The process was smooth!", rating: 5 }
     ];
 
-    // Original working images
     const foodImages = {
         "Mapo Tofu": "https://images.unsplash.com/photo-1589302168068-964664d93dc0?w=400&h=300&fit=crop",
         "Kung Pao Chicken": "https://images.unsplash.com/photo-1525755662778-989d0524087e?w=400&h=300&fit=crop",
@@ -920,7 +982,6 @@
         window.open(`https://wa.me/${BUSINESS_PHONE}?text=${encodeURIComponent(msg)}`, "_blank");
     }
 
-    // ORDER FORM submission
     document.getElementById("orderForm").addEventListener("submit", (e) => {
         e.preventDefault();
         const name = document.getElementById("orderName").value.trim();
@@ -959,7 +1020,6 @@
         sendWhatsApp(msg);
     });
 
-    // HIRE FORM submission
     document.getElementById("hireForm").addEventListener("submit", (e) => {
         e.preventDefault();
         const name = document.getElementById("hireName").value.trim();
@@ -994,17 +1054,14 @@
         sendWhatsApp(msg);
     });
 
-    // Close buttons
     document.getElementById("closeOrderModalBtn").addEventListener("click", closeOrderModal);
     document.getElementById("closeHireModalBtn").addEventListener("click", closeHireModal);
     
-    // Close modal when clicking outside
     window.onclick = (e) => {
         if (e.target === document.getElementById("orderModal")) closeOrderModal();
         if (e.target === document.getElementById("hireModal")) closeHireModal();
     };
 
-    // Tab switching
     document.querySelectorAll(".tab-btn").forEach(btn => {
         btn.addEventListener("click", () => {
             document.querySelectorAll(".tab-btn").forEach(b => b.classList.remove("active"));
@@ -1013,7 +1070,6 @@
         });
     });
 
-    // Navigation
     document.querySelectorAll("[data-nav]").forEach(link => {
         link.addEventListener("click", (e) => {
             e.preventDefault();
@@ -1025,12 +1081,10 @@
         });
     });
     
-    // Button handlers
     document.getElementById("heroOrderBtn").addEventListener("click", () => openOrderModal());
     document.getElementById("navOrderBtn").addEventListener("click", () => openOrderModal());
     document.getElementById("exploreMenuBtn").addEventListener("click", () => document.getElementById("menu").scrollIntoView({ behavior: "smooth" }));
 
-    // Initial render
     renderMenu("all");
     renderChefs();
     renderTestimonials();
