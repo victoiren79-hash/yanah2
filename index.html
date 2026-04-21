@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>YANAH | Food delivery & catering | Chinese · Korean · Western · Alive</title>
+    <title>YANAH | Food Delivery & Catering | Chinese · Korean · Western · Alive</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
@@ -30,7 +30,7 @@
             padding: 1rem 1.2rem 3rem;
         }
 
-        /* ========== HEADER - COMPACT ON PC ========== */
+        /* ========== HEADER - COMPACT ========== */
         .top-bar {
             display: flex;
             justify-content: space-between;
@@ -58,7 +58,6 @@
             line-height: 1;
         }
         
-        /* Desktop: large logo with negative margins to keep header compact */
         .logo-img {
             height: 180px;
             width: auto;
@@ -91,11 +90,15 @@
             margin-left: 0;
         }
         
+        /* BIGGER AND MORE VISIBLE TAGLINE */
         .logo-tagline {
-            font-size: 0.6rem;
-            font-weight: 500;
-            color: #8E8E98;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #D45A1E;
             margin-left: 0.3rem;
+            background: rgba(212,90,30,0.1);
+            padding: 0.2rem 0.5rem;
+            border-radius: 20px;
         }
 
         .nav-items {
@@ -129,55 +132,7 @@
             align-items: center;
         }
 
-        /* ========== MOBILE - CLEAN AND COMPACT ========== */
-        @media (max-width: 768px) {
-            .top-bar {
-                flex-direction: column;
-                align-items: stretch;
-                padding: 0.8rem 1.2rem;
-                border-radius: 40px;
-                min-height: auto;
-            }
-            
-            .logo-group {
-                justify-content: center;
-                gap: 0.5rem;
-            }
-            
-            /* Mobile: smaller logo, no negative margins needed */
-            .logo-img {
-                height: 65px;
-                margin: 0;
-            }
-            
-            .logo-yanah {
-                font-size: 1.2rem;
-            }
-            
-            .logo-food {
-                font-size: 0.7rem;
-            }
-            
-            .logo-tagline {
-                font-size: 0.5rem;
-            }
-            
-            .nav-items {
-                justify-content: center;
-                gap: 0.8rem;
-            }
-            
-            .nav-items a {
-                font-size: 0.75rem;
-            }
-            
-            .btn-order-nav {
-                padding: 0.35rem 1rem;
-                font-size: 0.7rem;
-            }
-        }
-
-        /* ========== HERO ========== */
+        /* ========== HERO - NEW MAIN HEADING ========== */
         .hero-section {
             text-align: center;
             padding: 1rem 0 1.2rem;
@@ -192,19 +147,20 @@
             color: #D45A1E;
             margin-bottom: 1rem;
         }
+        /* NEW MAIN HERO HEADING */
         .hero-section h1 {
-            font-size: 2.2rem;
+            font-size: 2.5rem;
             font-weight: 800;
             letter-spacing: -0.02em;
-            background: linear-gradient(135deg, #1C1C1E, #4A3B2C);
+            background: linear-gradient(135deg, #D45A1E, #F0983A);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
-            max-width: 700px;
+            max-width: 800px;
             margin: 0 auto 0.8rem;
         }
-        .hero-desc {
-            font-size: 0.95rem;
+        .hero-sub {
+            font-size: 1rem;
             color: #5E5E6A;
             max-width: 620px;
             margin: 0 auto 1.2rem;
@@ -256,7 +212,34 @@
             cursor: pointer;
         }
 
-        /* ========== STAFFING CARD ========== */
+        /* ========== NEW MINI SECTION: ALSO AVAILABLE ========== */
+        .also-available {
+            background: linear-gradient(135deg, #FFF3E8, #FFE8DC);
+            border-radius: 20px;
+            padding: 0.8rem 1.5rem;
+            margin: 1rem auto 2rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            width: auto;
+            text-align: center;
+            border: 1px solid rgba(212,90,30,0.2);
+        }
+        .also-available i {
+            font-size: 1.2rem;
+            color: #D45A1E;
+        }
+        .also-available span {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #2C2C2E;
+        }
+        .also-available strong {
+            color: #D45A1E;
+        }
+
+        /* ========== STAFFING CARD (kept same) ========== */
         .staffing-card {
             background: linear-gradient(105deg, #FFF7F0, #FFFFFF);
             border-radius: 28px;
@@ -451,7 +434,7 @@
             border-color: transparent;
         }
 
-        /* ========== HOW IT WORKS ========== */
+        /* ========== HOW IT WORKS - Delivery first, staffing last ========== */
         .steps-wrapper {
             display: flex;
             flex-direction: column;
@@ -641,7 +624,42 @@
                 flex-direction: row;
             }
             .hero-section h1 {
-                font-size: 3rem;
+                font-size: 3.2rem;
+            }
+        }
+        
+        /* Mobile adjustment */
+        @media (max-width: 768px) {
+            .top-bar {
+                flex-direction: column;
+                align-items: stretch;
+                padding: 0.8rem 1.2rem;
+                border-radius: 40px;
+                min-height: auto;
+            }
+            .logo-group {
+                justify-content: center;
+                gap: 0.5rem;
+            }
+            .logo-img {
+                height: 65px;
+                margin: 0;
+            }
+            .logo-yanah {
+                font-size: 1.2rem;
+            }
+            .logo-food {
+                font-size: 0.7rem;
+            }
+            .logo-tagline {
+                font-size: 0.7rem;
+            }
+            .nav-items {
+                justify-content: center;
+                gap: 0.8rem;
+            }
+            .hero-section h1 {
+                font-size: 1.8rem;
             }
         }
     </style>
@@ -650,10 +668,11 @@
 
 <div class="app-container">
 
-    <!-- HEADER: LOGO IMAGE + YANAH~Food text -->
+    <!-- HEADER -->
     <div class="top-bar">
         <div class="logo-group">
             <img src="yanah.png" alt="Yanah Logo" class="logo-img" onerror="this.style.display='none'">
+         
         </div>
         <div class="nav-items">
             <a data-nav="home">Home</a>
@@ -664,11 +683,11 @@
         </div>
     </div>
 
-    <!-- REST OF THE PAGE - SAME AS BEFORE -->
+    <!-- HERO with new main heading -->
     <div class="hero-section" id="home">
-        <div class="hero-badge">✦ FRESH & FUSION ✦</div>
-        <h1>Delicious meals,<br>delivered with soul</h1>
-        <p class="hero-desc">Chinese, Korean, Western, and Live-animal specialties (Goat, Pork) — plus expert staffing for hotels & restaurants.</p>
+        <div class="hero-badge">✦ SINCE 2020 ✦</div>
+        <h1>Food Delivery & Catering</h1>
+        <p class="hero-sub">Chinese, Korean, Western, and Live-animal specialties — plus expert staffing for hotels & restaurants.</p>
         <div class="stats-row">
             <div class="stat-item"><span class="stat-number">290+</span> dishes</div>
             <div class="stat-item"><span class="stat-number">15k+</span> happy customers</div>
@@ -683,6 +702,16 @@
         </div>
     </div>
 
+    <!-- NEW SMALL SECTION: Also Available Catering & Staffing -->
+    <div style="text-align: center;">
+        <div class="also-available">
+            <i class="fas fa-concierge-bell"></i>
+            <span><strong>Also Available:</strong> Catering for events & Professional staffing for hotels/restaurants</span>
+            <i class="fas fa-users"></i>
+        </div>
+    </div>
+
+    <!-- STAFFING SERVICE DESCRIPTION (kept) -->
     <div class="staffing-card">
         <div class="staffing-text">
             <i class="fas fa-handshake staffing-icon"></i>
@@ -691,6 +720,7 @@
         <div class="staffing-badge"><i class="fas fa-briefcase"></i> B2B staffing</div>
     </div>
 
+    <!-- MENU SECTION with ALIVE category -->
     <div id="menu">
         <div class="section-title">Our menu</div>
         <div class="menu-tab-header">
@@ -703,30 +733,32 @@
         <div id="dynamicMenuGrid" class="menu-grid"></div>
     </div>
 
+    <!-- CHEFS SECTION -->
     <div id="chefs">
         <div class="section-title">Hire our master chefs</div>
         <div class="section-subhead">Private dining, events, restaurant staffing — choose your expert</div>
         <div class="chefs-grid" id="chefsGrid"></div>
     </div>
 
+    <!-- HOW IT WORKS - Delivery first, staffing last -->
     <div id="how">
         <div class="section-title">How it works</div>
         <div class="section-subhead">Simple process: order food, hire a chef, or request staffing — all via WhatsApp. Only MoMo payment.</div>
         <div class="steps-wrapper">
-            <div class="step-card"><div class="step-number">1</div><div class="step-info"><h3>Choose & customize</h3><p>Pick from Chinese, Korean, Western, or Alive (Goat, Pork). Need a chef/staff? Click "Hire Chef".</p></div></div>
-            <div class="step-card"><div class="step-number">2</div><div class="step-info"><h3>Fill short form</h3><p>Add your name, address, event details or staffing requirements.</p></div></div>
-            <div class="step-card"><div class="step-number">3</div><div class="step-info"><h3>Send via WhatsApp</h3><p>One click redirects to Yanah WhatsApp. We confirm your order/staffing request.</p></div></div>
-            <div class="step-card"><div class="step-number">4</div><div class="step-info"><h3>Enjoy or staff placed</h3><p>Get your meal delivered or professional staff assigned. Pay with MoMo.</p></div></div>
+            <div class="step-card"><div class="step-number">1</div><div class="step-info"><h3>📦 Place your delivery order</h3><p>Browse our menu (Chinese, Korean, Western, Alive) → Click "Order" → Fill details → Send via WhatsApp.</p></div></div>
+            <div class="step-card"><div class="step-number">2</div><div class="step-info"><h3>🍽️ Get your meal delivered</h3><p>We prepare fresh and deliver to your door. Pay with MoMo on delivery.</p></div></div>
+            <div class="step-card"><div class="step-number">3</div><div class="step-info"><h3>👨‍🍳 Hire a chef / staff (optional)</h3><p>Need a chef for an event or staff for your hotel/restaurant? Click "Hire Chef" → Fill form → We'll arrange professionals.</p></div></div>
         </div>
     </div>
 
+    <!-- TESTIMONIALS -->
     <div class="testimonials-section">
         <div class="section-title" style="margin-top:0;">Customer love</div>
         <div class="testimonials-grid" id="testimonialsGrid"></div>
     </div>
 
     <footer>
-        <p>© 2026 YANAH — Food delivery & catering · Chinese · Korean · Western · Alive · Professional staffing · Only Mobile Money (MoMo) payment</p>
+        <p>© 2026 YANAH — Food Delivery & Catering · Chinese · Korean · Western · Alive · Professional staffing · Only Mobile Money (MoMo) payment</p>
     </footer>
 </div>
 
@@ -782,7 +814,7 @@
     // BUSINESS WHATSAPP
     const BUSINESS_PHONE = "250792763860";
 
-    // ALIVE CATEGORY (Goat, Pork)
+    // ALIVE CATEGORY (Goat, Pork) - KEPT
     const aliveItems = [
         { name: "Live Goat (spicy curry)", desc: "Fresh goat, slow-cooked with traditional spices. Requires pre-order.", price: "$32.90" },
         { name: "Live Pork (roasted whole leg)", desc: "Crispy skin, tender meat, served with tangy sauce.", price: "$28.50" }
@@ -857,6 +889,7 @@
     
     const defaultImg = "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=400&h=300&fit=crop";
 
+    // RENDER FUNCTIONS (kept same)
     function renderMenu(tab) {
         let items = [];
         if (tab === "chinese") items = chineseMenu;
@@ -936,9 +969,6 @@
         if (dishName) {
             document.getElementById("orderDish").value = dishName;
             if (priceEach) document.getElementById("orderPriceEach").value = priceEach;
-        } else {
-            document.getElementById("orderDish").value = "";
-            document.getElementById("orderPriceEach").value = "";
         }
         document.getElementById("orderName").value = "";
         document.getElementById("orderPhone").value = "";
@@ -949,13 +979,8 @@
         modal.classList.add("active");
     }
 
-    function closeOrderModal() { 
-        document.getElementById("orderModal").classList.remove("active"); 
-    }
-    
-    function closeHireModal() { 
-        document.getElementById("hireModal").classList.remove("active"); 
-    }
+    function closeOrderModal() { document.getElementById("orderModal").classList.remove("active"); }
+    function closeHireModal() { document.getElementById("hireModal").classList.remove("active"); }
 
     function openHireModal(chefName) {
         const modal = document.getElementById("hireModal");
@@ -968,13 +993,6 @@
                 }
             }
         }
-        document.getElementById("hireName").value = "";
-        document.getElementById("hirePhone").value = "";
-        document.getElementById("hireEventType").value = "";
-        document.getElementById("hireDate").value = "";
-        document.getElementById("hireGuests").value = "";
-        document.getElementById("hireAddress").value = "";
-        document.getElementById("hireRequests").value = "";
         modal.classList.add("active");
     }
 
@@ -989,8 +1007,7 @@
         const address = document.getElementById("orderAddress").value.trim();
         const dish = document.getElementById("orderDish").value.trim();
         const qty = parseInt(document.getElementById("orderQuantity").value);
-        const priceEachRaw = document.getElementById("orderPriceEach").value.trim().replace('$','');
-        const priceEach = parseFloat(priceEachRaw);
+        const priceEach = parseFloat(document.getElementById("orderPriceEach").value.trim().replace('$',''));
         const timeSlot = document.getElementById("orderTime").value.trim() || "As soon as possible";
         const instructions = document.getElementById("orderInstructions").value.trim();
         
@@ -1000,22 +1017,7 @@
         }
         
         const total = (qty * priceEach).toFixed(2);
-        const msg = `🍽️ *NEW ORDER - Yanah* 🍽️\n\n` +
-                    `*Customer Details:*\n` +
-                    `👤 Name: ${name}\n` +
-                    `📞 Phone: ${phone}\n\n` +
-                    `*Order Details:*\n` +
-                    `🍛 Dish: ${dish}\n` +
-                    `🔢 Quantity: ${qty}\n` +
-                    `💰 Price: $${priceEach.toFixed(2)} each\n` +
-                    `💵 Total: $${total}\n\n` +
-                    `*Delivery Information:*\n` +
-                    `📍 Address: ${address}\n` +
-                    `⏰ Time: ${timeSlot}\n\n` +
-                    `*Special Instructions:* ${instructions || "None"}\n\n` +
-                    `*Payment:* Mobile Money (MoMo)\n\n` +
-                    `Please confirm availability. Thank you!`;
-        
+        const msg = `🍽️ *NEW ORDER - Yanah* 🍽️\n\n*Customer Details:*\n👤 Name: ${name}\n📞 Phone: ${phone}\n\n*Order Details:*\n🍛 Dish: ${dish}\n🔢 Quantity: ${qty}\n💰 Price: $${priceEach.toFixed(2)} each\n💵 Total: $${total}\n\n*Delivery Information:*\n📍 Address: ${address}\n⏰ Time: ${timeSlot}\n\n*Special Instructions:* ${instructions || "None"}\n\n*Payment:* Mobile Money (MoMo)\n\nPlease confirm availability. Thank you!`;
         closeOrderModal();
         sendWhatsApp(msg);
     });
@@ -1036,27 +1038,13 @@
             return;
         }
         
-        const msg = `👨‍🍳 *NEW HIRING REQUEST - Yanah* 👨‍🍳\n\n` +
-                    `*Customer Details:*\n` +
-                    `👤 Name: ${name}\n` +
-                    `📞 Phone: ${phone}\n\n` +
-                    `*Hiring Details:*\n` +
-                    `👨‍🍳 Professional: ${chef}\n` +
-                    `🎉 Event/Staffing: ${eventType}\n` +
-                    `📅 Date: ${date}\n` +
-                    `👥 Guests (if event): ${guests || "N/A"}\n` +
-                    `📍 Address: ${address}\n\n` +
-                    `*Special Requests:* ${requests || "None"}\n\n` +
-                    `*Payment:* Mobile Money (MoMo) will be arranged.\n\n` +
-                    `Please confirm availability and pricing. Thank you!`;
-        
+        const msg = `👨‍🍳 *NEW HIRING REQUEST - Yanah* 👨‍🍳\n\n*Customer Details:*\n👤 Name: ${name}\n📞 Phone: ${phone}\n\n*Hiring Details:*\n👨‍🍳 Professional: ${chef}\n🎉 Event/Staffing: ${eventType}\n📅 Date: ${date}\n👥 Guests: ${guests || "N/A"}\n📍 Address: ${address}\n\n*Special Requests:* ${requests || "None"}\n\n*Payment:* Mobile Money (MoMo)\n\nPlease confirm availability. Thank you!`;
         closeHireModal();
         sendWhatsApp(msg);
     });
 
     document.getElementById("closeOrderModalBtn").addEventListener("click", closeOrderModal);
     document.getElementById("closeHireModalBtn").addEventListener("click", closeHireModal);
-    
     window.onclick = (e) => {
         if (e.target === document.getElementById("orderModal")) closeOrderModal();
         if (e.target === document.getElementById("hireModal")) closeHireModal();
